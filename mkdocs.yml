@@ -1,0 +1,169 @@
+# Project information
+site_name: alitiq Documentation
+site_url: https://docs.alitiq.com/
+site_author: Daniel Lassahn
+site_description: >-
+  Interacte with alitiq's forecasting API for wind, solar pv and load forecasts
+
+# Repository
+repo_name: alitiq/alitiq-doc
+repo_url: https://github.com/alitiq/alitiq-doc
+
+
+# Configuration
+theme:
+  name: material
+  custom_dir: material/overrides
+  features:
+    - announce.dismiss
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    # - content.code.select
+    # - content.footnote.tooltips
+    # - content.tabs.link
+    - content.tooltips
+    # - header.autohide
+    # - navigation.expand
+    - navigation.footer
+    - navigation.indexes
+    # - navigation.instant
+    # - navigation.instant.prefetch
+    # - navigation.instant.progress
+    # - navigation.prune
+    - navigation.sections
+    - navigation.tabs
+    # - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+    # - toc.integrate
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/link
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch-off
+        name: Switch to system preference
+  font:
+    text: Quicksand Light
+    code: Roboto Mono
+  favicon: cropped-220818_Favicon_alitiq-32x32.jpg
+  logo: alitiq_logo_white.png
+# Plugins
+#plugins:
+#  - blog
+#  - search:
+#      separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+#  - minify:
+#      minify_html: true
+
+# Hooks
+#hooks:
+#  - material/overrides/hooks/shortcodes.py
+#  - material/overrides/hooks/translations.py
+
+# Additional configuration
+extra:
+  status:
+    new: Recently added
+    deprecated: Deprecated
+  analytics:
+    provider: google
+    property: !ENV GOOGLE_ANALYTICS_KEY
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/alitiq
+#    - icon: fontawesome/brands/docker
+#      link: https://hub.docker.com/r/squidfunk/mkdocs-material/
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/alitiq/
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/alitiq
+#    - icon: fontawesome/brands/bluesky
+#      link: https://bsky.app/profile/squidfunk.bsky.social
+#    - icon: fontawesome/brands/mastodon
+#      link: https://fosstodon.org/@squidfunk
+#    - icon: fontawesome/brands/x-twitter
+#      link: https://x.com/squidfunk
+
+# Extensions
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      normalize_issue_symbols: true
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets:
+      auto_append:
+        - includes/mkdocs.md
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+      combine_header_slug: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+
+# Page tree
+nav:
+  - Home: index.md
+  - Solar PV :
+      - Manage your PV portfolio: solar_power_forecast/setup_pv_portfolio_forecast.md
+      - Push measurements for optimized Forecasts: solar_power_forecast/push_pv_measurement.md
+      - Inspect measurements in alitiqs database: solar_power_forecast/inspect_pv_measurement.md
+      - Get access to Forecasts: solar_power_forecast/load_power_forecast.md
+      - Check for available forecast runs: solar_power_forecast/check_available_runs.md
+  - Load Forecast :
+      - Push measured load data: load_forecast/push_load_measurement.md
+      - Inspect measured load data: load_forecast/inspect_load_measurement.md
+      - Get access to Load Forecasts: load_forecast/load_power_forecast.md
