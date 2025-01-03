@@ -67,12 +67,14 @@ theme:
   favicon: cropped-220818_Favicon_alitiq-32x32.jpg
   logo: alitiq_logo_white.png
 # Plugins
-#plugins:
-#  - blog
+plugins:
+  - blog:
+      blog_dir: knowledge
+#  - social
 #  - search:
 #      separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
-#  - minify:
-#      minify_html: true
+  - minify:
+      minify_html: true
 
 # Hooks
 #hooks:
@@ -167,3 +169,5 @@ nav:
       - Push measured load data: load_forecast/push_load_measurement.md
       - Inspect measured load data: load_forecast/inspect_load_measurement.md
       - Get access to Load Forecasts: load_forecast/load_power_forecast.md
+  - Knowledge:
+    - knowledge/index.md
