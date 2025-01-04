@@ -7,7 +7,7 @@ categories:
   - Forecast
   - Accuracy
 ---
-# How to Evaluate Forecasts for the Energy Sector in 2024 🔍⚡📊
+# How to Evaluate Forecasts for the Energy Sector in 2025 ⚡📊
 
 Forecasting is a cornerstone of the energy sector, enabling decision-making for operations, investments, and policy development. However, the real value of a forecast lies in its evaluation and cross-validation. How well did it predict reality? 
 Here’s a step-by-step guide to evaluating forecasts, focusing on understanding the process, selecting the right forecasts, and comparing them against observations.
@@ -17,7 +17,7 @@ Here’s a step-by-step guide to evaluating forecasts, focusing on understanding
 
 ---
 
-## 🌟 **1. Understand the Process**: Decision-Making Context 📅🧠
+## **1. Understand the Process**: Decision-Making Context 📅🧠
 
 Before diving into evaluation, it’s crucial to understand *why* the forecast was made and what kind of **forecast horizon** we need to target this. This context is key to interpreting the results correctly. In general you can differ between three different kind of forecast in the energy industry overall: 
 
@@ -29,7 +29,7 @@ By clarifying the decision-making context and forecast horizon upfront, you can 
 
 ---
 
-## 📂 **2. Select Forecasts for Evaluation**: What and When? 🧾
+## **2. Select Forecasts for Evaluation**: What and When? 📂
 
 Energy systems generate forecasts at multiple time steps and for various variables (e.g., demand, generation, prices). Evaluating them all can be overwhelming, so **filter relevant forecasts** based on:
 
@@ -62,7 +62,7 @@ This step ensures you’re only working with forecasts that are meaningful and c
 
 ---
 
-## 📊 **3. Evaluate Forecasts Against Observations**: Metrics & Tools 📈📉
+## **3. Evaluate Forecasts Against Observations**: Metrics & Tools 📈📉 📊
 
 With the relevant forecasts in hand, the next step is to calculate **forecast accuracy** or **error metrics** by comparing predictions to actual observations. Common metrics include:
 
@@ -96,7 +96,7 @@ These metrics quantify how close the forecasts were to the observed values and h
 
 ---
 
-## 🔁 **4. Iterative Refinement**: Learn & Improve 🚀
+##  **4. Iterative Refinement**: Learn & Improve 🔁🚀
 
 Forecast evaluation is not a one-and-done task. Use insights from evaluation to refine your models or forecasting processes:
 
@@ -106,7 +106,7 @@ Forecast evaluation is not a one-and-done task. Use insights from evaluation to 
 
 ---
 
-## 🛠 Tools for Forecast Evaluation 📌
+##  Tools for Forecast Evaluation 🛠
 
 Python libraries like **pandas**, **numpy**, and **scikit-learn** are great for quick evaluations. For advanced needs, explore:
 
@@ -116,7 +116,7 @@ Python libraries like **pandas**, **numpy**, and **scikit-learn** are great for 
 
 ---
 
-## 🏁 Conclusion
+## 🏁 Conclusion 🏁
 
 Evaluating energy sector forecasts isn’t just about crunching numbers—it’s about understanding the decision context, selecting relevant forecasts, and applying the right metrics. By following a structured approach, you can ensure forecasts serve their ultimate purpose: empowering smart decisions. 🎯✨
 

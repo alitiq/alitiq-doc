@@ -1,6 +1,6 @@
 # Getting Started with alitiq APIs 🌟
 
-Welcome to **alitiq’s Forecasting Services**, where innovation meets precision in solar PV and load forecasting. This guide provides an overview of alitiq’s APIs and a step-by-step approach to get started. Whether you're managing solar installations or planning for energy demand, alitiq offers robust solutions tailored to your needs.
+Welcome to **alitiq’s Forecasting Services**, where innovation meets precision in solar PV and load forecasting (wind is coming soon ;). This guide provides an overview of alitiq’s APIs and a step-by-step approach to get started. Whether you're managing solar installations or planning for energy demand, alitiq offers robust solutions tailored to your needs.
 
 ---
 
@@ -37,6 +37,12 @@ The endpoint for this service is `engine.alitiq.com`
 - **Step 1**: Contact **[sales@alitiq.com](mailto:sales@alitiq.com)** for API access and pricing information.  
 - **Step 2**: Once approved, you’ll receive your API key and documentation tailored to your energy needs.  
 - **Step 3**: Use the SDK or API to push measurements, retrieve forecasts, and manage demand analytics.  
+
+### 🌤️ **Weather API**  
+- **Step 1**: Contact **[sales@alitiq.com](mailto:sales@alitiq.com)** for API access and pricing information.  
+- **Step 2**: Once approved, you’ll receive your API key and documentation tailored to your needs.  
+- **Step 3**: Use the API to interact directly with the API. SDK support is coming soon. 
+
 
 ---
 

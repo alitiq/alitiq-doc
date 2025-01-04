@@ -1,6 +1,6 @@
 authors:
   alitiq:
-    name: alitiq GmbH        # Author name
-    description: alitiq Forecasting Company # Author description
-    avatar: alitiq_logo_white.png         # Author avatar
+    name: alitiq Forecasting        # Author name
+    description: Experts in Weather & AI # Author description
+    avatar: assets/cropped-220818_Favicon_alitiq-32x32.jpg         # Author avatar
     url: https://alitiq.com/            # Author website URL
