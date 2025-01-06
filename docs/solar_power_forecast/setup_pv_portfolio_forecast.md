@@ -85,10 +85,6 @@ To add a new location to your portfolio, you have to use the `pv_systems/add` en
         installed_power_inverter=950.0,
         azimuth=180.0,
         tilt=25.0,
-        subsystems=[
-            {"azimuth": 180.0, "tilt": 25.0, "power_capacity": 600.0},
-            {"azimuth": 90.0, "tilt": 30.0, "power_capacity": 400.0},
-        ],
     )
     
     # Create the location

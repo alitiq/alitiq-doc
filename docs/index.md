@@ -8,7 +8,7 @@ Welcome to **alitiq’s Forecasting Services**, where innovation meets precision
 
 alitiq offers two main services through its APIs:  
 
-### 1. **Solar PV Forecasting API** 🌞  
+### 1. **Solar PV Forecasting API** 🌞 
 Designed for managing and forecasting solar power plants, this API provides:  
 - **Portfolio Management**: Add, update, or remove PV systems.  
 - **Power Forecasting**: Retrieve accurate solar power forecasts for individual locations or entire portfolios.  
@@ -16,13 +16,20 @@ Designed for managing and forecasting solar power plants, this API provides:
 
 The endpoint for this service is `solar.alitiq.com`
 
-### 2. **Load Forecasting aka engine API** 🔋  
+### 2. **Load Forecasting aka engine API** 🔋
 Optimized for heat, gas, and electricity forecasting, this API enables:  
 - **Energy Load Predictions**: Obtain detailed forecasts for individual locations.  
 - **Measurement Inspection**: Retrieve historical data for analysis.  
 - **Custom Models**: Leverage alitiq’s optimized forecasting models for enhanced accuracy.  
 
 The endpoint for this service is `engine.alitiq.com`
+
+### 3. **Weather Forecasting API** 🌤️
+Weather is our profession but not our business. Eitherways weather data is a basis for our enhanced forecasts. So we make available any kind of weather information via out Weather API. 
+- **Weather Forecast**: Obtain weather forecasts for individual locations from several leading national weather services.  
+- **Weather Observations**: Access a global network of weather observations. 
+
+The endpoint for this service is `api.alitiq.com`
 
 ---
 
@@ -80,6 +87,6 @@ Once you have your API key:
 
 For further assistance:  
 - Contact us at **[support@alitiq.com](mailto:support@alitiq.com)** for technical queries.  
-- Reach out to **[sales@alitiq.com](mailto:sales@alitiq.com)** for demand forecast-related inquiries.  
+- Reach out to **[sales@alitiq.com](mailto:sales@alitiq.com)** for load forecast-related inquiries.  
 
 🌟 **Start forecasting smarter with alitiq today!** 🌟
