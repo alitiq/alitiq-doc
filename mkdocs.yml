@@ -163,7 +163,7 @@ nav:
       - Manage your PV portfolio: solar_power_forecast/setup_pv_portfolio_forecast.md
       - Push measurements for optimized Forecasts: solar_power_forecast/push_pv_measurement.md
       - Inspect measurements in alitiqs database: solar_power_forecast/inspect_pv_measurement.md
-      - Get access to Forecasts: solar_power_forecast/load_power_forecast.md
+      - Get access to Forecasts: solar_power_forecast/pv_solar_power_forecast.md
       - Check for available forecast runs: solar_power_forecast/check_available_runs.md
   - Load Forecast :
       - Push measured load data: load_forecast/push_load_measurement.md
