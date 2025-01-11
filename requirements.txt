@@ -1,7 +1,7 @@
 aiohttp==3.10.2
 uvloop==0.16.0
 aiofiles==0.5.0
-wheel==0.36.
+wheel==0.45.1
 # web framework
 fastapi==0.115.6
 pydantic==2.10.4
