@@ -17,4 +17,4 @@ middleware = [
 # Define the FastAPI server
 app = FastAPI(middleware=middleware)
 
-app.mount("/", StaticFiles(directory="/app/alitiq-doc/site"), name="docs")
+app.mount("/", StaticFiles(directory="/app/site"), name="docs")
