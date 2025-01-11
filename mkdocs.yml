@@ -1,6 +1,6 @@
 # Project information
 site_name: alitiq Documentation
-site_url: https://docs.alitiq.com/
+#site_url: https://docs.alitiq.com/
 site_author: Daniel Lassahn
 site_description: >-
   Interacte with alitiq's forecasting API for wind, solar pv and load forecasts
