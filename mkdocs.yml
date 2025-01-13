@@ -1,6 +1,6 @@
 # Project information
 site_name: alitiq Documentation
-#site_url: https://docs.alitiq.com/
+site_url: https://docs.alitiq.com/
 site_author: Daniel Lassahn
 site_description: >-
   Interacte with alitiq's forecasting API for wind, solar pv and load forecasts
@@ -93,17 +93,11 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/alitiq
 #    - icon: fontawesome/brands/docker
-#      link: https://hub.docker.com/r/squidfunk/mkdocs-material/
     - icon: fontawesome/brands/python
       link: https://pypi.org/project/alitiq/
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/company/alitiq
-#    - icon: fontawesome/brands/bluesky
-#      link: https://bsky.app/profile/squidfunk.bsky.social
-#    - icon: fontawesome/brands/mastodon
-#      link: https://fosstodon.org/@squidfunk
-#    - icon: fontawesome/brands/x-twitter
-#      link: https://x.com/squidfunk
+  generator: false
 
 # Extensions
 markdown_extensions:
@@ -133,8 +127,8 @@ markdown_extensions:
   - pymdownx.magiclink:
       normalize_issue_symbols: true
       repo_url_shorthand: true
-      user: squidfunk
-      repo: mkdocs-material
+      user: alitiq
+      repo: alitiq-doc
   - pymdownx.mark
   - pymdownx.smartsymbols
   - pymdownx.snippets:
