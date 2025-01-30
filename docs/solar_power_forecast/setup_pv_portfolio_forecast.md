@@ -165,7 +165,7 @@ After setting up your portfolio or to check out existing locations, you can use 
 
     ``` bash
     curl --request GET \
-      --url 'https://api.alitiq.com/pv_systems/list?response_format=json' \
+      --url 'https://solar.alitiq.com/pv_systems/list?response_format=json' \
       --header 'x-api-key: api-key'
     ``` 
 
@@ -279,6 +279,203 @@ In case you use the html- Response of the API the systems will be shown in a tab
 ![html-overview API](html_overview_api.png)
 
 ---
+
+
+## Inspect your portfolio 
+
+After setting up your portfolio or to check out existing locations, you can use the `pv_systems/list` endpoint.
+
+=== "python requests"
+
+    ``` python
+    import requests
+    
+    url = "https://solar.alitiq.com/pv_systems/list"
+    
+    querystring = {"response_format":"html"}
+    
+    payload = ""
+    headers = {"x-api-key": {api-key}}
+    response = requests.request("GET", url, data=payload, params=querystring, headers=headers)
+    
+    print(response.text)
+    ```
+
+=== "alitiq-py"
+
+    ``` python
+    from alitiq import alitiqSolarAPI
+    
+    # Initialize the API client
+    solar_api = alitiqSolarAPI(api_key="your-api-key")
+    
+    # return the location as a pd.DataFrame
+    response = solar_api.list_locations()
+    print("Locations:", response)
+    ```
+
+=== "cURL"
+
+    ``` bash
+    curl --request GET \
+      --url 'https://solar.alitiq.com/pv_systems/list?response_format=json' \
+      --header 'x-api-key: api-key'
+    ``` 
+
+
+Example response json: 
+```json
+{
+  "columns": [
+    "location_id",
+    "altitude",
+    "latitude",
+    "longitude",
+    "site_name",
+    "zip_code",
+    "country",
+    "do_backtracking",
+    "row_distance",
+    "tso_area",
+    "subsystem_id",
+    "installed_power",
+    "installed_power_inverter",
+    "temp_factor",
+    "azimuth",
+    "tilt",
+    "mover",
+    "height",
+    "table_length",
+    "max_rotation_angle"
+  ],
+  "index": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "data": [
+    [
+      "1",
+      126.95,
+      50.06,
+      8.83,
+      "Obertshausen",
+      "63179",
+      "DE",
+      false,
+      null,
+      "Amprion",
+      5599,
+      709.3,
+      636.0,
+      0.0,
+      195.0,
+      10.0,
+      1,
+      null,
+      null,
+      null
+    ],
+    [
+      "1",
+      126.95,
+      50.06,
+      8.83,
+      "Obertshausen",
+      "63179",
+      "DE",
+      false,
+      null,
+      "Amprion",
+      5759,
+      999.38,
+      480.0,
+      0.0,
+      180.0,
+      15.0,
+      1,
+      null,
+      null,
+      null
+    ],
+    [
+      "4507",
+      557.75,
+      48.9,
+      10.3,
+      "test_2",
+      null,
+      null,
+      null,
+      null,
+      null,
+      5796,
+      320.0,
+      300.0,
+      0.0,
+      50.0,
+      15.0,
+      1,
+      null,
+      null,
+      null
+    ]
+  ]
+}
+```
+
+In the response of your portfolio you might find additional information that you have not defined e.g. the TSO-Area or a ZIP Code. These information are defined by alitiq.
+
+In case you use the html- Response of the API the systems will be shown in a table like this: 
+
+![html-overview API](html_overview_api.png)
+
+---
+
+## Delete system from your portfolio
+
+In case you want to delete a pv-system from your portfolio, you can simply use a POST request to the endpoint `pv_systems/delete` it. Please use your individually defined location_id to delete the system: 
+
+=== "python requests"
+
+    ``` python
+    import requests
+    
+    url = "https://solar.alitiq.com/pv_systems/delete"
+    
+    querystring = {"location_id": "your-location-id-to-delete"}
+    
+    payload = ""
+    headers = {"x-api-key": {api-key}}
+    response = requests.request("POST", url, data=payload, params=querystring, headers=headers)
+    
+    print(response.text)
+    ```
+
+=== "alitiq-py"
+
+    ``` python
+    from alitiq import alitiqSolarAPI
+    
+    # Initialize the API client
+    solar_api = alitiqSolarAPI(api_key="your-api-key")
+    
+    # delete location 
+    response = solar_api.delete_location("your-location-id-to_delete")
+    print(response.text)
+    ```
+
+=== "cURL"
+
+    ``` bash
+    curl --request POST \
+      --url 'https://solar.alitiq.com/pv_systems/delete?location_id=your-location-id-to_delete' \
+      --header 'x-api-key: api-key'
+    ``` 
+
+---
+
 
 ## FAQs ❓ 
 
