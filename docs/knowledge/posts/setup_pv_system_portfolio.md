@@ -9,11 +9,13 @@ categories:
 
 In our general Documentation about the API [here](https://docs.alitiq.com/solar_power_forecast/setup_pv_portfolio_forecast), we described the way to setup / configure your PV-System in a high-level way. To give you a more detailed view into the way we think about PV-Systems and how you can boost the performance by just following this guide, keep reading. 
 
+<!-- more -->
+
 ## Locations and Subsystems
 
 Each PV-System is defined by it `location` and 1 or more `subsystems`. A PV-System is divided into subsystems by unique combinations of the **azimuth** (or module orientation) and **tilt** (or slope) of the modules. Maybe, this will differ from the inverter and string setup. 
 
-![alitiq PV-System azimuth and tilt](/docs/assets/azimuth_tilt.png)
+![alitiq PV-System azimuth and tilt](https://docs.alitiq.com/assets/azimuth_tilt.png)
 
 
 > Please note, that we ask for measurements for a System and not for a Subsystem, which means we only interest in the outcome of the whole PV-System in case you are interested in receiving optimized forecast. 
@@ -22,19 +24,19 @@ So just find out your different **azimuth** and **tilt** combinations and split 
 
 The `location` has to defined once for each subsystem in the upper section of the configuration panel. 
 
-![alitiq Location definition](/docs/assets/location.png)
+![alitiq Location definition](https://docs.alitiq.com/assets/location.png)
 
 
 ## Azimuth 
 
 We have defined that a southern azimuth equals 180 °. A northern azimuth equals 0 °or 360 °. An azimuth to the west is 270 ° and to the east 90 °. There is noe difference between Northern or Southern hemisphere. So PV-Systems in Australia facing to the north have the azimuth 0 °. 
 
-![Image](/docs/assets/compass_above_system.png)
+![Image](https://docs.alitiq.com/compass_above_system.png)
 
 
 
 ## Example 
-![Image](/docs/assets/roof_top_example.png)
+![Image](https://docs.alitiq.com/assets/roof_top_example.png)
 
 
 We assume the system, you can see in the image above, has an installed module capacity of 100 kWp and an installed inverter capacity of 80 kWp. 70 % belongs to the left roof and 30 % to the right roof. From the specifications we know the tilt of the pv modules is 10 °. This means that this PV-System splits up into 4 Subsystems and here is how:
@@ -48,7 +50,7 @@ We assume the system, you can see in the image above, has an installed module ca
 
 ## Tracking
 
- ![Image](/docs/assets/tracking_config.png)
+ ![Image](https://docs.alitiq.com/assets/tracking_config.png)
 Setting up a system with a tracking is a bit more complex compared to the other. First of all you have to know the type of the tracking. We differ between:
 
 1. No Tracking

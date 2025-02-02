@@ -76,4 +76,4 @@ https://api.alitiq.com/weather_forecast/?latitude=48.356&longitude=10.904&respon
 
 ### Example html response Plot
 
-![Weather Forecast](/assets/example_html_plot_weather_forecast.png)
+![Weather Forecast](https://docs.alitiq.com/assets/example_html_plot_weather_forecast.png)
