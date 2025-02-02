@@ -277,7 +277,7 @@ In the response of your portfolio you might find additional information that you
 
 In case you use the html- Response of the API the systems will be shown in a table like this: 
 
-![html-overview API](html_overview_api.png)
+![html-overview API](https://docs.alitiq.com/assets/html_overview_api.png)
 
 ---
 

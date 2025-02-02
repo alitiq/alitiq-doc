@@ -153,7 +153,7 @@ markdown_extensions:
 # Page tree
 nav:
   - Home: index.md
-  - Solar PV :
+  - Solar PV : solar_power_forecast/index.md
       - Manage your PV portfolio: solar_power_forecast/setup_pv_portfolio_forecast.md
       - Push measurements for optimized Forecasts: solar_power_forecast/push_pv_measurement.md
       - Inspect measurements in alitiqs database: solar_power_forecast/inspect_pv_measurement.md
