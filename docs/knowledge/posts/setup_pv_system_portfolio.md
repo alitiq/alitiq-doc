@@ -13,7 +13,7 @@ In our general Documentation about the API [here](https://docs.alitiq.com/solar_
 
 ## Locations and Subsystems
 
-Each PV-System is defined by it `location` and 1 or more `subsystems`. A PV-System is divided into subsystems by unique combinations of the **azimuth** (or module orientation) and **tilt** (or slope) of the modules. Maybe, this will differ from the inverter and string setup. 
+Each PV-System is defined by it's **location** and 1 or more **subsystems**. A PV-System is divided into subsystems by unique combinations of the **azimuth** (or module orientation) and **tilt** (or slope) of the modules. Maybe, this will differ from the inverter and string setup. 
 
 ![alitiq PV-System azimuth and tilt](https://docs.alitiq.com/assets/azimuth_tilt.png)
 
@@ -31,7 +31,7 @@ The `location` has to defined once for each subsystem in the upper section of th
 
 We have defined that a southern azimuth equals 180 °. A northern azimuth equals 0 °or 360 °. An azimuth to the west is 270 ° and to the east 90 °. There is noe difference between Northern or Southern hemisphere. So PV-Systems in Australia facing to the north have the azimuth 0 °. 
 
-![Image](https://docs.alitiq.com/compass_above_system.png)
+![Image](https://docs.alitiq.com/assets/compass_above_system.png)
 
 
 
