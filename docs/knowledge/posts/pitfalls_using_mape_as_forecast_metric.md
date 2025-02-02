@@ -3,9 +3,6 @@ date: 2024-10-16
 authors: [alitiq]
 categories:
   - Evaluation
-  - Metrics
-  - Forecast
-  - Accuracy
 ---
 
 # Pitfalls using MAPE as forecast accuracy metric 

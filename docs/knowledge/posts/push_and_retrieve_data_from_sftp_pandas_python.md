@@ -2,7 +2,6 @@
 date: 2024-10-02
 authors: [alitiq]
 categories:
-  - Data Exchange
   - IO
 ---
 

@@ -2,9 +2,7 @@
 date: 2024-12-16
 authors: [alitiq]
 categories:
-  - Uncertainty
   - Evaluation
-  - Accuracy
 ---
 
 # 🌞 Uncertainty Quantification in Renewable Energy Forecasting: A Guide to Smarter Predictions in 2025

@@ -3,7 +3,6 @@ date: 2024-08-16
 authors: [alitiq]
 categories:
   - Solar-APP
-  - Tutorial
 ---
 
 # Your first steps in the alitiq solar application ☀️

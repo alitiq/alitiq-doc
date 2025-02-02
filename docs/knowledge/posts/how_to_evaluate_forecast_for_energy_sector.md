@@ -3,9 +3,6 @@ date: 2024-11-22
 authors: [alitiq]
 categories:
   - Evaluation
-  - Metrics
-  - Forecast
-  - Accuracy
 ---
 # How to Evaluate Forecasts for the Energy Sector in 2025 ⚡📊
 
