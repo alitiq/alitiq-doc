@@ -53,7 +53,7 @@ Here’s an example demonstrating how to submit measurement data using the `meas
     
     payload = [
         {
-            "location_id": 2,
+            "location_id": "2",
             "dt": "2022-03-06T09:45:00.000",
             "power": 201,
             "irradiance": -1,
@@ -63,7 +63,7 @@ Here’s an example demonstrating how to submit measurement data using the `meas
             "power_measure": "kW"
         },
         {
-            "location_id": 2,
+            "location_id": "2",
             "dt": "2022-03-06T10:00:00.000",
             "power": 213,
             "irradiance": -1,
@@ -73,7 +73,7 @@ Here’s an example demonstrating how to submit measurement data using the `meas
             "power_measure": "kW"
         },
         {
-            "location_id": 2,
+            "location_id": "2",
             "dt": "2022-03-06T10:15:00.000",
             "power": 242,
             "irradiance": -1,
@@ -83,7 +83,7 @@ Here’s an example demonstrating how to submit measurement data using the `meas
             "power_measure": "kW"
         },
         {
-            "location_id": 2,
+            "location_id": "2",
             "dt": "2022-03-06T10:30:00.000",
             "power": 270,
             "irradiance": 234,
@@ -93,7 +93,7 @@ Here’s an example demonstrating how to submit measurement data using the `meas
             "power_measure": "kW"
         },
         {
-            "location_id": 2,
+            "location_id": "2",
             "dt": "2022-03-06T10:45:00.000",
             "power": 320,
             "irradiance": -1,
@@ -103,7 +103,7 @@ Here’s an example demonstrating how to submit measurement data using the `meas
             "power_measure": "kW"
         },
         {
-            "location_id": 2,
+            "location_id": "2",
             "dt": "2022-03-06T11:00:00.000",
             "power": 397,
             "irradiance": -1,
@@ -176,7 +176,7 @@ Here’s an example demonstrating how to submit measurement data using the `meas
       --header 'x-api-key: {api-key}' \
       --data '[
         {
-            "location_id": 2,
+            "location_id": "2",
             "dt": "2022-03-06T09:45:00.000",
             "power": 201.0,
             "irradiance": -1,
@@ -186,7 +186,7 @@ Here’s an example demonstrating how to submit measurement data using the `meas
             "power_measure": "kW"
         },
         {
-            "location_id": 2,
+            "location_id": "2",
             "dt": "2022-03-06T10:00:00.000",
             "power": 213.0,
             "irradiance": -1,
@@ -196,7 +196,7 @@ Here’s an example demonstrating how to submit measurement data using the `meas
             "power_measure": "kW"
         },
         {
-            "location_id": 2,
+            "location_id": "2",
             "dt": "2022-03-06T10:15:00.000",
             "power": 242.0,
             "irradiance": -1,
@@ -206,7 +206,7 @@ Here’s an example demonstrating how to submit measurement data using the `meas
             "power_measure": "kW"
         },
         {
-            "location_id": 2,
+            "location_id": "2",
             "dt": "2022-03-06T10:30:00.000",
             "power": 270.0,
             "irradiance": 234.0,
@@ -216,7 +216,7 @@ Here’s an example demonstrating how to submit measurement data using the `meas
             "power_measure": "kW"
         },
         {
-            "location_id": 2,
+            "location_id": "2",
             "dt": "2022-03-06T10:45:00.000",
             "power": 320,
             "irradiance": -1,
@@ -226,7 +226,7 @@ Here’s an example demonstrating how to submit measurement data using the `meas
             "power_measure": "kW"
         },
         {
-            "location_id": 2,
+            "location_id": "2",
             "dt": "2022-03-06T11:00:00.000",
             "power": 397,
             "irradiance": -1,

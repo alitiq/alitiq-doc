@@ -36,23 +36,23 @@ To add a new location to your portfolio, you have to use the `pv_systems/add/` e
     
     payload = [
         {
-            "location_id": 12,
+            "location_id": "12",
             "site_name": "test_2",
             "latitude": 48.9,
             "longitude": 10.3,
             "installed_power": 320,
             "installed_power_inverter": 300,
-            "orientation": 180,
+            "azimuth": 180,
             "tilt": 13,
             "temp_factor": 0.033,
             "mover": 1
         },
         {
-            "location_id": 12,
+            "location_id": "12",
             "site_name": "test_2",
             "latitude": 48.9,
             "longitude": 10.3,
-            "power": 320,
+            "installed_power": 320,
             "installed_power_inverter": 300,
             "azimuth": 180,
             "tilt": 15,
@@ -101,10 +101,11 @@ To add a new location to your portfolio, you have to use the `pv_systems/add/` e
       --header 'x-api-key: {api-key}' \
       --data '[
         {
+            "location_id": "12",
             "site_name": "test_2",
             "latitude": 48.9,
-            "installed_power": 10.3,
-            "power": 320,
+            "longitude": 10.3,
+            "installed_power": 320,
             "installed_power_inverter": 300,
             "azimuth": 180,
             "tilt": 13,
@@ -112,6 +113,7 @@ To add a new location to your portfolio, you have to use the `pv_systems/add/` e
             "mover": 0
         },
         {
+            "location_id": "12",
             "site_name": "test_2",
             "latitude": 48.9,
             "longitude": 10.3,
