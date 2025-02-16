@@ -61,7 +61,7 @@ To specify the location, you must provide one of the following combinations:
 
 ### Example Request:
 ```bash
-https://api.alitiq.com/observation/?station_name=Augsburg&response_format=html
+https://api.alitiq.com/weather/observation/?station_name=Augsburg&response_format=html
 ```
 
 

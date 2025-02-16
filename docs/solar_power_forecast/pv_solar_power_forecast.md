@@ -16,7 +16,7 @@ The alitiq Solar API provides robust and flexible forecasting capabilities for i
 
 ## Forecasting for a Single Solar PV System  
 
-To access a forecast for a specific Solar PV system, use the `forecast/single` endpoint from the API or the `get_forecast` method from the SDK.
+To access a forecast for a specific Solar PV system, use the `forecast/single/` endpoint from the API or the `get_forecast` method from the SDK.
 
 ### Example  
 
@@ -25,7 +25,7 @@ To access a forecast for a specific Solar PV system, use the `forecast/single` e
     ``` python
     import requests
     
-    url = "https://solar.alitiq.com/forecast/single"
+    url = "https://api.alitiq.com/solar/forecast/single/"
     
     querystring = {"location_id":"123","response_format":"html","weather_model":"icon_eu","timezone":"UTC","power_measure":"kW","interval_in_minutes":"15"}
     
@@ -64,7 +64,7 @@ To access a forecast for a specific Solar PV system, use the `forecast/single` e
 
     ``` bash
     curl --request GET \
-      --url 'https://solar.alitiq.com/forecast/single?location_id=123&response_format=json&weather_model=icon_eu&timezone=UTC&power_measure=kW&interval_in_minutes=15' \
+      --url 'https://api.alitiq.com/solar/forecast/single/?location_id=123&response_format=json&weather_model=icon_eu&timezone=UTC&power_measure=kW&interval_in_minutes=15' \
       --header 'x-api-key: your-api-key'
     ``` 
 
@@ -73,7 +73,7 @@ To access a forecast for a specific Solar PV system, use the `forecast/single` e
 
 ## Forecasting for an Entire Portfolio  
 
-To access a forecast for your whole portfolio of PV systems, use the `forecast/portfolio` endpoint from the API or the `get_forecast_portfolio` method from the SDK.
+To access a forecast for your whole portfolio of PV systems, use the `forecast/portfolio/` endpoint from the API or the `get_forecast_portfolio` method from the SDK.
 
 ### Example  
 
@@ -84,7 +84,7 @@ To access a forecast for your whole portfolio of PV systems, use the `forecast/p
     ``` python
     import requests
     
-    url = "https://solar.alitiq.com/forecast/portfolio"
+    url = "https://api.alitiq.com/solar/forecast/portfolio/"
     
     querystring = {"response_format":"html","weather_model":"icon_eu","timezone":"UTC","power_measure":"kW","interval_in_minutes":"15", "portfolio_sum_column":"False"}
     
@@ -123,7 +123,7 @@ To access a forecast for your whole portfolio of PV systems, use the `forecast/p
 
     ``` bash
     curl --request GET \
-      --url 'https://solar.alitiq.com/forecast/portfolio?response_format=html&weather_model=icon_eu&timezone=UTC&power_measure=kW&interval_in_minutes=15' \
+      --url 'https://api.alitiq.com/solar/forecast/portfolio/?response_format=html&weather_model=icon_eu&timezone=UTC&power_measure=kW&interval_in_minutes=15' \
       --header 'x-api-key: your-api-key'
     ```
 

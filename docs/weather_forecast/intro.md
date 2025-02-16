@@ -19,7 +19,7 @@ Authentication is performed using the `x-api-key` parameter in the request heade
 
 ### Example Header:
 ```bash
-curl -X GET 'https://api.alitiq.com/weather_forecast/?latitude=49.356&longitude=11.904&response_format=json&weather_model=icon_eu' \
+curl -X GET 'https://api.alitiq.com/weather/weather_forecast/?latitude=49.356&longitude=11.904&response_format=json&weather_model=icon_eu' \
 -H 'x-api-key: <your-api-key>'
 ```
 
@@ -29,11 +29,11 @@ curl -X GET 'https://api.alitiq.com/weather_forecast/?latitude=49.356&longitude=
 
 alitiq provides various API endpoints for accessing weather data:
 
-- **Weather Forecasts:** `/weather_forecast/`
-- **Weather Observations:** `/observation/` and `/observation_global/`
-- **Solar Position:** `/solar/`
-- **Nowcast (+2h Precipitation Forecast):** `/nowcast/precipitation/`
-- **Nowcast (Current Precipitation):** `/nowcast/gridded_precipitation/`
+- **Weather Forecasts:** `/weather/weather_forecast/`
+- **Weather Observations:** `/weather/observation/` and `/weather/observation_global/`
+- **Solar Position:** `/weather/solar/`
+- **Nowcast (+2h Precipitation Forecast):** `/weather/nowcast/precipitation/`
+- **Nowcast (Current Precipitation):** `/weather/nowcast/gridded_precipitation/`
 
 ### Time Format
 

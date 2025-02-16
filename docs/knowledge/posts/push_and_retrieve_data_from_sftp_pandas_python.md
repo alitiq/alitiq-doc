@@ -16,7 +16,6 @@ The user will be authenticated by its SSH-Key.
 ```python
 import paramiko
 from io import StringIO
-from datetime import datetime
 import pandas as pd
 
 

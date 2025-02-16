@@ -6,7 +6,7 @@ Welcome to **alitiq’s Forecasting Services**, where innovation meets precision
 
 ## Overview of alitiq APIs 🛠️  
 
-alitiq offers two main services through its APIs:  
+alitiq offers different services via `api.alitiq.com`:  
 
 ### 1. **Solar PV Forecasting API** 🌞 
 Designed for managing and forecasting solar power plants, this API provides:  
@@ -15,7 +15,7 @@ Designed for managing and forecasting solar power plants, this API provides:
 - **Power Forecasting**: Retrieve accurate solar power forecasts for individual locations or entire portfolios.  
 - **Measurement Management**: Push real-time or historical data for more precise forecasting.  
 
-The endpoint for this service is `solar.alitiq.com`
+The endpoint for this service is `api.alitiq.com/solar`
 
 ### 2. **Load Forecasting aka engine API** 🔋
 Optimized for heat, gas, and electricity forecasting, this API enables: 
@@ -24,7 +24,7 @@ Optimized for heat, gas, and electricity forecasting, this API enables:
 - **Measurement Inspection**: Retrieve historical data for analysis.  
 - **Custom Models**: Leverage alitiq’s optimized forecasting models for enhanced accuracy.  
 
-The endpoint for this service is `engine.alitiq.com`
+The endpoint for this service is `api.alitiq.com/load`
 
 ### 3. **Weather Forecasting API** 🌤️
 Weather is our profession but not our business. Eitherways weather data is a basis for our enhanced forecasts. So we make available any kind of weather information via out Weather API. 
@@ -32,27 +32,24 @@ Weather is our profession but not our business. Eitherways weather data is a bas
 - **Weather Forecast**: Obtain weather forecasts for individual locations from several leading national weather services.  
 - **Weather Observations**: Access a global network of weather observations. 
 
-The endpoint for this service is `api.alitiq.com`
+The endpoint for this service is `api.alitiq.com/weather`
 
 ---
 
 ## How to Get Access 🔑  
+
+Currently alitiq offers a web interface to the solar power forecast service. After you have logged in, you can view the ``x-api-key`` 
 
 ### **Solar PV Forecasting API** 🌞
 - **Step 1**: Register your account at **[Solar-APP](https://solar-app.alitiq.com)**.  
 - **Step 2**: Once registered, you’ll receive your API key and relevant details.  
 - **Step 3**: Use the SDK or directly interact with the API to manage your solar portfolio.  
 
-### **Load Forecasting API** 🔋
+
+### **Load | Wind | Weather Forecasting API** 🔋
 - **Step 1**: Contact **[sales@alitiq.com](mailto:sales@alitiq.com)** for API access and pricing information.  
 - **Step 2**: Once approved, you’ll receive your API key and documentation tailored to your energy needs.  
 - **Step 3**: Use the SDK or API to push measurements, retrieve forecasts, and manage demand analytics.  
-
-### **Weather API** 🌤️ 
-- **Step 1**: Contact **[sales@alitiq.com](mailto:sales@alitiq.com)** for API access and pricing information.  
-- **Step 2**: Once approved, you’ll receive your API key and documentation tailored to your needs.  
-- **Step 3**: Use the API to interact directly with the API. SDK support is coming soon. 
-
 
 ---
 

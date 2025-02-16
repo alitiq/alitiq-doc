@@ -45,14 +45,14 @@ To check available forecast runs, provide the following:
 
 ## Example: Check Available Runs  
 
-Here’s how to check available forecast runs using the `forecast/check` endpoint or the `check_available_runs` method of the python SDK:
+Here’s how to check available forecast runs using the `forecast/check/` endpoint or the `check_available_runs` method of the python SDK:
 
 === "python requests"
 
     ``` python
     import requests
     
-    url = "https://solar.alitiq.com/forecast/check"
+    url = "https://api.alitiq.com/solar/forecast/check/"
     
     querystring = {"weather_model":"icon_eu", "location_id": "1", "number_of_runs": 10}
     
@@ -76,7 +76,7 @@ Here’s how to check available forecast runs using the `forecast/check` endpoin
     location_id = "SP123"
     
     # Check available forecast runs
-    available_runs = solar_api.check_available_runs(location_id=location_id, weather_model="OPTIMIZED")
+    available_runs = solar_api.check_available_runs(location_id=location_id, weather_model="optimized")
     
     # Print the available runs
     print("Available forecast runs:")
@@ -87,7 +87,7 @@ Here’s how to check available forecast runs using the `forecast/check` endpoin
 
     ``` bash
     curl --request GET \
-      --url 'https://solar.alitiq.com/forecast/check?weather_model=icon_eu&location_id=1&number_of_runs=10' \
+      --url 'https://api.alitiq.com/solar/forecast/check/?weather_model=icon_eu&location_id=1&number_of_runs=10' \
       --header 'x-api-key: api-key'
     ``` 
 
@@ -102,7 +102,7 @@ The response includes the list of available forecast runs:
 ```plaintext
 |      run_id      |  dt_run_start   |  dt_forecast_start  | weather_model   |  
 |-------------------|-----------------|---------------------|-----------------|  
-| 00123456789abcdef | 2024-06-10T08:00| 2024-06-10T10:00    | OPTIMIZED       |  
+| 00123456789abcdef | 2024-06-10T08:00| 2024-06-10T10:00    | optimized       |  
 | 00123456789ghijkl | 2024-06-10T14:00| 2024-06-10T16:00    | icon-eu         |  
 ```  
 

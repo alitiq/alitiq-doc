@@ -3,7 +3,7 @@
 The endpoint for retrieving weather forecasts is:
 
 ```
-https://api.alitiq.com/weather_forecast/
+https://api.alitiq.com/weather/weather_forecast/
 ```
 
 This endpoint requires the following parameters:
@@ -37,7 +37,7 @@ The `icon` model is a combination of the high-resolution forecast model `icon_d2
 For presenting forecasts on a daily basis or at other intervals, another endpoint is available:
 
 ```
-https://api.alitiq.com/weather_forecast/aggregation/
+https://api.alitiq.com/weather/weather_forecast/aggregation/
 ```
 
 This endpoint requires an additional parameter:
@@ -53,7 +53,7 @@ This endpoint requires an additional parameter:
 
 ### Example Request:
 ```bash
-https://api.alitiq.com/weather_forecast/aggregation/?latitude=51.2288286&longitude=6.7734849&freq=1D
+https://api.alitiq.com/weather/weather_forecast/aggregation/?latitude=51.2288286&longitude=6.7734849&freq=1D
 ```
 
 ---
@@ -71,7 +71,7 @@ For requests, the API determines the nearest location (`mos_mix`) or the closest
 
 #### Example Request:
 ```bash
-https://api.alitiq.com/weather_forecast/?latitude=48.356&longitude=10.904&response_format=json&weather_model=mos_mix
+https://api.alitiq.com/weather/weather_forecast/?latitude=48.356&longitude=10.904&response_format=json&weather_model=mos_mix
 ```
 
 ### Example html response Plot

@@ -25,14 +25,14 @@ In the alitiq Solar API, a **PV power plant** is represented as a location with 
 
 ## Add a new PV systems to your portfolio 🚀  
 
-To add a new location to your portfolio, you have to use the `pv_systems/add` endpoint.
+To add a new location to your portfolio, you have to use the `pv_systems/add/` endpoint.
 
 === "python requests"
 
     ``` python
     import requests
     
-    url = "https://solar.alitiq.com/pv_systems/add"
+    url = "https://api.alitiq.com/solar/pv_systems/add/"
     
     payload = [
         {
@@ -96,7 +96,7 @@ To add a new location to your portfolio, you have to use the `pv_systems/add` en
 
     ``` bash
     curl --request POST \
-      --url https://solar.alitiq.com/pv_systems/add \
+      --url https://api.alitiq.com/solar/pv_systems/add/ \
       --header 'Content-Type: application/json' \
       --header 'x-api-key: {api-key}' \
       --data '[
@@ -131,14 +131,14 @@ To add a new location to your portfolio, you have to use the `pv_systems/add` en
 
 ## Inspect your portfolio 
 
-After setting up your portfolio or to check out existing locations, you can use the `pv_systems/list` endpoint.
+After setting up your portfolio or to check out existing locations, you can use the `pv_systems/list/` endpoint.
 
 === "python requests"
 
     ``` python
     import requests
     
-    url = "https://solar.alitiq.com/pv_systems/list"
+    url = "https://api.alitiq.com/solar/pv_systems/list/"
     
     querystring = {"response_format":"html"}
     
@@ -166,7 +166,7 @@ After setting up your portfolio or to check out existing locations, you can use 
 
     ``` bash
     curl --request GET \
-      --url 'https://solar.alitiq.com/pv_systems/list?response_format=json' \
+      --url 'https://api.alitiq.com/solar/pv_systems/list/?response_format=json' \
       --header 'x-api-key: api-key'
     ``` 
 
@@ -283,14 +283,14 @@ In case you use the html- Response of the API the systems will be shown in a tab
 
 ## Delete system from your portfolio
 
-In case you want to delete a pv-system from your portfolio, you can simply use a POST request to the endpoint `pv_systems/delete` it. Please use your individually defined location_id to delete the system: 
+In case you want to delete a pv-system from your portfolio, you can simply use a POST request to the endpoint `pv_systems/delete/` it. Please use your individually defined location_id to delete the system: 
 
 === "python requests"
 
     ``` python
     import requests
     
-    url = "https://solar.alitiq.com/pv_systems/delete"
+    url = "https://api.alitiq.com/solar/pv_systems/delete/"
     
     querystring = {"location_id": "your-location-id-to-delete"}
     
@@ -318,7 +318,7 @@ In case you want to delete a pv-system from your portfolio, you can simply use a
 
     ``` bash
     curl --request POST \
-      --url 'https://solar.alitiq.com/pv_systems/delete?location_id=your-location-id-to_delete' \
+      --url 'https://api.alitiq.com/solar/pv_systems/delete/?location_id=your-location-id-to_delete' \
       --header 'x-api-key: api-key'
     ``` 
 

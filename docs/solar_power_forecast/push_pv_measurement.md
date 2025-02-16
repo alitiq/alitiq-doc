@@ -49,7 +49,7 @@ Here’s an example demonstrating how to submit measurement data using the `meas
     ``` python
     import requests
     
-    url = "https://solar.alitiq.com/measurement/add"
+    url = "https://solar.alitiq.com/measurement/add/"
     
     payload = [
         {
@@ -171,7 +171,7 @@ Here’s an example demonstrating how to submit measurement data using the `meas
 
     ``` bash
     curl --request POST \
-      --url https://solar.alitiq.com/measurement/add \
+      --url https://api.alitiq.com/solar/measurement/add/ \
       --header 'Content-Type: application/json' \
       --header 'x-api-key: {api-key}' \
       --data '[

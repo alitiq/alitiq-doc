@@ -57,7 +57,7 @@ To provide highly optimized forecasts, the API requires at least 90 days of hist
 
 ## Example Code to Push Measurements  
 
-Here’s an example demonstrating how to submit measurement data using the `measurement/add` endpoint and the python-SDK method `post_measurements`:
+Here’s an example demonstrating how to submit measurement data using the `measurement/add/` endpoint and the python-SDK method `post_measurements`:
 
 
 === "python requests"
@@ -65,7 +65,7 @@ Here’s an example demonstrating how to submit measurement data using the `meas
     ``` python
     import requests
     
-    url = "https://engine.alitiq.com/measurement/add"
+    url = "https://api.alitiq.com/load/measurement/add/"
     
     payload = [
         {
@@ -181,7 +181,7 @@ Here’s an example demonstrating how to submit measurement data using the `meas
 
     ``` bash
     curl --request POST \
-      --url https://engine.alitiq.com/measurement/add \
+      --url https://api.alitiq.com/load/measurement/add/ \
       --header 'Content-Type: application/json' \
       --header 'x-api-key: {api-key}' \
       --data '[

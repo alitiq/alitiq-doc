@@ -15,7 +15,7 @@ The alitiq Load API provides robust and flexible forecasting capabilities for in
 
 ## Forecasting for a Single Load timeseries
 
-To access a forecast for a specific Solar PV system, use the `forecast` endpoint from the API or the `get_forecast` method from the SDK.
+To access a forecast for a specific Solar PV system, use the `forecast/` endpoint from the API or the `get_forecast` method from the SDK.
 
 ### Example  
 
@@ -24,7 +24,7 @@ To access a forecast for a specific Solar PV system, use the `forecast` endpoint
     ``` python
     import requests
     
-    url = "https://engine.alitiq.com/forecast"
+    url = "https://api.alitiq.com/load/forecast/"
     
     querystring = {"location_id":"123","response_format":"html","weather_model":"icon_eu","timezone":"UTC","power_measure":"kW","interval_in_minutes":"15"}
     
@@ -63,7 +63,7 @@ To access a forecast for a specific Solar PV system, use the `forecast` endpoint
 
     ``` bash
     curl --request GET \
-      --url 'https://engine.alitiq.com/forecast?location_id=99&response_format=json&weather_model=icon_eu&timezone=UTC&power_measure=kW&interval_in_minutes=15' \
+      --url 'https://api.alitiq.com/load/forecast/?location_id=99&response_format=json&weather_model=icon_eu&timezone=UTC&power_measure=kW&interval_in_minutes=15' \
       --header 'x-api-key: your-api-key'
     ``` 
 

@@ -32,7 +32,7 @@ To inspect data, provide the following information:
 
 ## Example: Inspect Data  
 
-Below is an example of how to use the `measurement/inspect` endpoint to inspect data and the method `get_measurements`:  
+Below is an example of how to use the `measurement/inspect/` endpoint to inspect data and the method `get_measurements`:  
 
 
 === "python requests"
@@ -40,7 +40,7 @@ Below is an example of how to use the `measurement/inspect` endpoint to inspect 
     ``` python
     import requests
     
-    url = "https://engine.alitiq.com/forecast/single"
+    url = "https://api.alitiq.com/load/forecast/single/"
     
     querystring = {"location_id":"123","response_format":"json"}
     
@@ -81,7 +81,7 @@ Below is an example of how to use the `measurement/inspect` endpoint to inspect 
 
     ``` bash
     curl --request GET \
-      --url 'https://engine.alitiq.com/measurement/inspect?location_id=123&response_format=json' \
+      --url 'https://api.alitiq.com/load/measurement/inspect/?location_id=123&response_format=json' \
       --header 'x-api-key: api-key'
     ``` 
 
