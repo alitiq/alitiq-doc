@@ -17,7 +17,7 @@ Designed for managing and forecasting solar power plants, this API provides:
 
 The endpoint for this service is `api.alitiq.com/solar`
 
-### 2. **Load Forecasting aka engine API** 🔋
+### 2. **Load Forecasting API** 🔋
 Optimized for heat, gas, and electricity forecasting, this API enables: 
 
 - **Energy Load Predictions**: Obtain detailed forecasts for individual locations.  
