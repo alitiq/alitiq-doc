@@ -259,7 +259,7 @@ Here’s an example demonstrating how to submit measurement data using the `meas
 
 - **Batch Submissions**: Push multiple measurements in a single API call for efficiency.  
 - **Time Synchronization**: Ensure timestamps (`dt`) are accurate and in the correct timezone.  
-- **Validation**: Use the SDK's `EngineMeasurementForm` for automatic data validation.  
+- **Validation**: Use the SDK's `LoadMeasurementForm` for automatic data validation.  
 
 ---
 

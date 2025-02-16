@@ -26,7 +26,7 @@ To access a forecast for a specific Solar PV system, use the `forecast/` endpoin
     
     url = "https://api.alitiq.com/load/forecast/"
     
-    querystring = {"location_id":"123","response_format":"html", "timezone":"UTC","power_measure":"kW","interval_in_minutes":"15"}
+    querystring = {"location_id":"123","response_format":"html", "tz":"UTC","power_measure":"kW","interval_in_minutes":"15"}
     
     payload = ""
     headers = {"x-api-key": "your-api-key"}
@@ -63,7 +63,7 @@ To access a forecast for a specific Solar PV system, use the `forecast/` endpoin
 
     ``` bash
     curl --request GET \
-      --url 'https://api.alitiq.com/load/forecast/?location_id=99&response_format=json&timezone=UTC&power_measure=kW&interval_in_minutes=15' \
+      --url 'https://api.alitiq.com/load/forecast/?location_id=99&response_format=json&tz=UTC&power_measure=kW&interval_in_minutes=15' \
       --header 'x-api-key: your-api-key'
     ``` 
 
