@@ -16,6 +16,10 @@ Inspecting data involves retrieving historical measurement records stored in the
 - **Detailed Records**: Includes power output, timestamps, and optional irradiance values.  
 - **Analysis Ready**: Data is returned in a format suitable for direct analysis using tools like pandas.  
 
+!!! note "Data displayed as it is in alitiq's database"
+
+    The data you will see when you inspect what you have pushed to alitiq has a unified structure. The data will be in UTC, with end timestamp in kW
+
 ---
 
 ## Required Parameters  
