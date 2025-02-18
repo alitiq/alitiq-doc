@@ -6,10 +6,6 @@ Welcome to the **alitiq Wind Power Forecasting API**! This guide explains how to
 
 ## Key Concepts 📚  
 
-Here’s your optimized and completed markdown:  
-
----
-
 In the **alitiq Wind API**, a **WindPark** is represented as a location with one or more **wind turbines**. Forecasts are generated for an entire **WindPark**, not for individual turbines.  
 
 A list of available wind turbines can be found **[here](https://docs.alitiq.com/wind_power_forecast/available_turbines_types)**.  
@@ -22,7 +18,7 @@ A **WindTurbine** is defined by the following parameters:
 - **Hub Height**: The height from the ground to the center of the turbine’s rotor (in meters).  
 - **Rotor Diameter**: The total diameter of the turbine’s rotor blades (in meters) [Optional].  
 - **Turbine Type**: The specific model or manufacturer identifier for the wind turbine.  
-- **Installed Power**: The maximum rated power output of the turbine (in kilowatts)Required in case you decided to use "DEFAULT" turbine type.  
+- **Installed Power**: The maximum rated power output of the turbine (in kilowatts) Required in case you decided to use "DEFAULT" turbine type.  
 
 ---
 
