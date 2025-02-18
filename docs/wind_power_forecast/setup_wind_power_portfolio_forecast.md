@@ -1,4 +1,4 @@
-# Solar-PV power forecasting locations
+# Wind power forecasting locations
 
 Welcome to the **alitiq Wind Power Forecasting API**! This guide explains how to create a location for a WindPark including an individual amount of turbines for your WindPark location.  
 
