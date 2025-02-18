@@ -44,9 +44,9 @@ To access a forecast for a specific Windpark, use the `forecast/single/` endpoin
     from alitiq import alitiqWindAPI
     
     # Initialize the Wind API client
-    wind_api = alitiqSolarAPI(api_key="your-api-key")
+    wind_api = alitiqWindAPI(api_key="your-api-key")
     
-    # Retrieve forecast for a specific Solar PV system
+    # Retrieve forecast for a specific WindPark
     forecast = wind_api.get_forecast(
         location_id="WP123",  # Replace with your system's location ID
         dt_calc=datetime(2024, 6, 15, 12),  # Optional: specify the calculation timestamp
@@ -133,15 +133,15 @@ To access a forecast for your whole portfolio of PV systems, use the `forecast/p
 
 The following parameters offer you flexibility when generating forecasts:  
 
-| **Parameter**           | **Description**                                                                                                 | **Default Value**  |
-|--------------------------|-----------------------------------------------------------------------------------------------------------------|--------------------|
-| `location_id`           | Unique identifier for the Solar PV system. Required for system-level forecasts. This is your defined identifer. | *None*            |
-| `dt_calc`               | Timestamp for forecast calculation. Useful for time-specific forecasts, and access historic ones.               | *Latest available*|
-| `power_measure`         | Unit of power measurement (`kW`, `MW`, etc.).                                                                   | `"kW"`            |
-| `timezone`              | Timezone for the forecast data.                                                                                 | `"UTC"`           |
-| `interval_in_minutes`   | Forecast interval (e.g., `15` for 15-minute intervals). Important for retieviing Energy instead of Power        | `15`              |
-| `window_boundary`       | Defines interval boundaries (`begin`, `center`, or `end`).                                                      | `"end"`           |
-| `portfolio_sum_column`  | Adds a column summing forecasts for all systems in the portfolio.                                               | `True`            |
+| **Parameter**           | **Description**                                                                                          | **Default Value**  |
+|--------------------------|----------------------------------------------------------------------------------------------------------|--------------------|
+| `location_id`           | Unique identifier for the WindPark. Required for system-level forecasts. This is your defined identifer. | *None*            |
+| `dt_calc`               | Timestamp for forecast calculation. Useful for time-specific forecasts, and access historic ones.        | *Latest available*|
+| `power_measure`         | Unit of power measurement (`kW`, `MW`, etc.).                                                            | `"kW"`            |
+| `timezone`              | Timezone for the forecast data.                                                                          | `"UTC"`           |
+| `interval_in_minutes`   | Forecast interval (e.g., `15` for 15-minute intervals). Important for retieviing Energy instead of Power | `15`              |
+| `window_boundary`       | Defines interval boundaries (`begin`, `center`, or `end`).                                               | `"end"`           |
+| `portfolio_sum_column`  | Adds a column summing forecasts for all systems in the portfolio.                                        | `True`            |
 
 ---
 
@@ -155,7 +155,7 @@ The flexibility to define parameters ensures that the API adapts to various use 
 - Tailored outputs based on specific power measurement units.  
 - Easy integration by using your own identifiers
 
-This adaptability makes the alitiq Solar API a powerful tool for energy planning and decision-making.  
+This adaptability makes the alitiq Wind API a powerful tool for energy planning and decision-making.  
 
 ---
 

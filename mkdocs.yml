@@ -160,7 +160,7 @@ nav:
       - Get access to Forecasts: solar_power_forecast/pv_solar_power_forecast.md
       - Check for available forecast runs: solar_power_forecast/check_available_runs.md
   - Wind Power :
-#      - Manage your Wind Power portfolio: wind_power_forecast/setup_wind_park_portfolio_forecast.md
+      - Manage your Wind Power portfolio: wind_power_forecast/setup_wind_park_portfolio_forecast.md
       - Push measurements for optimized Forecasts: wind_power_forecast/push_wind_park_measurement.md
       - Inspect measurements in alitiqs database: wind_power_forecast/inspect_wind_park_measurement.md
       - Get access to Forecasts: wind_power_forecast/wind_power_forecast.md
