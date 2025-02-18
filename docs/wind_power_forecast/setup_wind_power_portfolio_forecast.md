@@ -1,65 +1,69 @@
 # Solar-PV power forecasting locations
 
-Welcome to the **alitiq Solar Power Forecasting API**! This guide explains how to create a location for a PV power plant, including subsystems for each unique combination of **azimuth** and **tilt**.  
+Welcome to the **alitiq Wind Power Forecasting API**! This guide explains how to create a location for a WindPark including an individual amount of turbines for your WindPark location.  
 
 ---
 
 ## Key Concepts 📚  
 
-In the alitiq Solar API, a **PV power plant** is represented as a location with one or more **subsystems**. Each subsystem corresponds to a unique configuration of azimuth and tilt of the PV modules. By defining these subsystems, the API ensures precise forecasting for the entire power plant.  
-
-
-### Subsystems  
-- A **subsystem** is defined by:  
-  - **Azimuth**: Orientation of the module relative to true north (in degrees, South 180°).  
-  - **Tilt**: Angle of the module from the horizontal plane (in degrees).  
-  - **Power Capacity**: Installed capacity of the modules in the subsystem (in kW).  
-  - **installed_power**: The capacity of all modules per subsystem in the power plant.  
-  - **inverter_power**: The capacity of the inverters per subsystem in the power plant.  
-
-
-- Each unique combination of azimuth and tilt requires a separate subsystem for accurate forecasting.  
-
+Here’s your optimized and completed markdown:  
 
 ---
 
-## Add a new PV systems to your portfolio 🚀  
+In the **alitiq Wind API**, a **WindPark** is represented as a location with one or more **wind turbines**. Forecasts are generated for an entire **WindPark**, not for individual turbines.  
 
-To add a new location to your portfolio, you have to use the `pv_systems/add/` endpoint.
+A list of available wind turbines can be found **[here](https://docs.alitiq.com/wind_power_forecast/available_turbines_types)**.  
+
+---
+
+### **WindTurbineSchema**  
+A **WindTurbine** is defined by the following parameters:  
+
+- **Hub Height**: The height from the ground to the center of the turbine’s rotor (in meters).  
+- **Rotor Diameter**: The total diameter of the turbine’s rotor blades (in meters) [Optional].  
+- **Turbine Type**: The specific model or manufacturer identifier for the wind turbine.  
+- **Installed Power**: The maximum rated power output of the turbine (in kilowatts)Required in case you decided to use "DEFAULT" turbine type.  
+
+---
+
+## Add a new WindPark to your portfolio 🚀  
+
+To add a new location to your portfolio, you have to use the `wind_parks/add/` endpoint.
 
 === "python requests"
 
     ``` python
     import requests
     
-    url = "https://api.alitiq.com/solar/pv_systems/add/"
-    
-    payload = [
-        {
-            "location_id": "12",
-            "site_name": "test_2",
-            "latitude": 48.9,
-            "longitude": 10.3,
-            "installed_power": 320,
-            "installed_power_inverter": 300,
-            "azimuth": 180,
-            "tilt": 13,
-            "temp_factor": 0.033,
-            "mover": 1
-        },
-        {
-            "location_id": "12",
-            "site_name": "test_2",
-            "latitude": 48.9,
-            "longitude": 10.3,
-            "installed_power": 320,
-            "installed_power_inverter": 300,
-            "azimuth": 180,
-            "tilt": 15,
-            "temp_factor": 0.033,
-            "mover": 1
-        }
-    ]
+    url = "https://api.alitiq.com/wind/wind_parks/add/"
+    payload = {
+      "location_id": "WP123",
+      "latitude": 51.52079,
+      "longitude": 7.75955194036,
+      "site_name": "Test-site",
+      #"zip_code": "59423",
+      #"country": "DE",
+      #"tso_area": "Tennet",
+      #"nighttime_curtailment": True,
+      #"start_nighttime_curtailment": "22:00:00",
+      #"end_nighttime_curtailment": "06:00:00",
+      #"curtailment_level": 0.3,
+      #"time_zone_curtailment": "CET",
+      "wind_turbines": [
+          {
+              "hub_height": 110.0,
+              "rotor_diameter": 136.0,
+              "turbine_type": "VS136/3500",
+              "installed_power": 3500.0
+          },
+          {
+              "hub_height": 110.0,
+              "rotor_diameter": 136.0,
+              "turbine_type": "VS136/3500",
+              "installed_power": 3500.0
+          }
+      ]
+    }
     headers = {"Content-Type": "application/json", "x-api-key": {api-key}}
     
     response = requests.request("POST", url, json=payload, headers=headers)
@@ -70,25 +74,43 @@ To add a new location to your portfolio, you have to use the `pv_systems/add/` e
 === "alitiq-py"
 
     ``` python
-    from alitiq import alitiqSolarAPI, SolarPowerPlantModel
+    from alitiq import alitiqWindAPI, WindParkModel
     
     # Initialize the API client
-    solar_api = alitiqSolarAPI(api_key="your-api-key")
+    wind_api = alitiqWindAPI(api_key="your-api-key")
     
-    # Define the PV power plant with subsystems
-    plant = SolarPowerPlantModel(
-        site_name="My Solar Plant",
-        location_id="SP123",
-        latitude=48.160170,
-        longitude=10.55907,
-        installed_power=1000.0,
-        installed_power_inverter=950.0,
-        azimuth=180.0,
-        tilt=25.0,
-    )
+    # Define the WindPark
+    wind_park_data = {
+      "location_id": "WP123",
+      "latitude": 51.52079,
+      "longitude": 7.75955194036,
+      "site_name": "Test-site",
+      #"zip_code": "59423",
+      #"country": "DE",
+      #"tso_area": "Tennet",
+      #"nighttime_curtailment": True,
+      #"start_nighttime_curtailment": "22:00:00",
+      #"end_nighttime_curtailment": "06:00:00",
+      #"curtailment_level": 0.3,
+      #"time_zone_curtailment": "CET",
+      "wind_turbines": [
+          {
+              "hub_height": 110.0,
+              "rotor_diameter": 136.0,
+              "turbine_type": "VS136/3500",
+              "installed_power": 3500.0
+          },
+          {
+              "hub_height": 110.0,
+              "rotor_diameter": 136.0,
+              "turbine_type": "VS136/3500",
+              "installed_power": 3500.0
+          }
+      ]
+    }
     
     # Create the location
-    response = solar_api.create_location(plant)
+    response = wind_api.create_location(WindParkModel(**wind_park_data))
     print("Location created:", response)
     ```
 
@@ -96,35 +118,29 @@ To add a new location to your portfolio, you have to use the `pv_systems/add/` e
 
     ``` bash
     curl --request POST \
-      --url https://api.alitiq.com/solar/pv_systems/add/ \
+      --url https://api.alitiq.com/wind/wind_parks/add/ \
       --header 'Content-Type: application/json' \
       --header 'x-api-key: {api-key}' \
-      --data '[
-        {
-            "location_id": "12",
-            "site_name": "test_2",
-            "latitude": 48.9,
-            "longitude": 10.3,
-            "installed_power": 320,
-            "installed_power_inverter": 300,
-            "azimuth": 180,
-            "tilt": 13,
-            "temp_factor": 0.033,
-            "mover": 0
-        },
-        {
-            "location_id": "12",
-            "site_name": "test_2",
-            "latitude": 48.9,
-            "longitude": 10.3,
-            "installed_power": 320,
-            "installed_power_inverter": 300,
-            "azimuth": 180,
-            "tilt": 15,
-            "temp_factor": 0.033,
-            "mover": 0
-        }
-    ]'
+      --data '{
+        "location_id": "WP123",
+        "latitude": 51.52079,
+        "longitude": 7.75955194036,
+        "site_name": "Test-site",
+        "wind_turbines": [
+            {
+                "hub_height": 110.0,
+                "rotor_diameter": 136.0,
+                "turbine_type": "VS136/3500",
+                "installed_power": 3500.0
+            },
+            {
+                "hub_height": 110.0,
+                "rotor_diameter": 136.0,
+                "turbine_type": "VS136/3500",
+                "installed_power": 3500.0
+            }
+        ]
+      }'
     ``` 
 
 
@@ -133,14 +149,14 @@ To add a new location to your portfolio, you have to use the `pv_systems/add/` e
 
 ## Inspect your portfolio 
 
-After setting up your portfolio or to check out existing locations, you can use the `pv_systems/list/` endpoint.
+After setting up your portfolio or to check out existing locations, you can use the `wind_parks/list/` endpoint.
 
 === "python requests"
 
     ``` python
     import requests
     
-    url = "https://api.alitiq.com/solar/pv_systems/list/"
+    url = "https://api.alitiq.com/wind/wind_parks/list/"
     
     querystring = {"response_format":"html"}
     
@@ -154,13 +170,13 @@ After setting up your portfolio or to check out existing locations, you can use 
 === "alitiq-py"
 
     ``` python
-    from alitiq import alitiqSolarAPI
+    from alitiq import alitiqWindAPI
     
     # Initialize the API client
-    solar_api = alitiqSolarAPI(api_key="your-api-key")
+    wind_api = alitiqWindAPI(api_key="your-api-key")
     
     # return the location as a pd.DataFrame
-    response = solar_api.list_locations()
+    response = wind_api.list_locations()
     print("Locations:", response)
     ```
 
@@ -168,7 +184,7 @@ After setting up your portfolio or to check out existing locations, you can use 
 
     ``` bash
     curl --request GET \
-      --url 'https://api.alitiq.com/solar/pv_systems/list/?response_format=json' \
+      --url 'https://api.alitiq.com/wind/wind_parks/list/?response_format=json' \
       --header 'x-api-key: api-key'
     ``` 
 
@@ -176,7 +192,8 @@ After setting up your portfolio or to check out existing locations, you can use 
 Example response json: 
 ```json
 {
-  "columns": [
+  "columns":
+  [
     "location_id",
     "altitude",
     "latitude",
@@ -184,94 +201,23 @@ Example response json:
     "site_name",
     "zip_code",
     "country",
-    "do_backtracking",
-    "row_distance",
     "tso_area",
-    "subsystem_id",
-    "installed_power",
-    "installed_power_inverter",
-    "temp_factor",
-    "azimuth",
-    "tilt",
-    "mover",
-    "height",
-    "table_length",
-    "max_rotation_angle"
-  ],
-  "index": [
-    0,
-    1,
-    2,
-    3
-  ],
-  "data": [
-    [
-      "1",
-      126.95,
-      50.06,
-      8.83,
-      "Obertshausen",
-      "63179",
-      "DE",
-      false,
-      null,
-      "Amprion",
-      5599,
-      709.3,
-      636.0,
-      0.0,
-      195.0,
-      10.0,
-      1,
-      null,
-      null,
-      null
-    ],
-    [
-      "1",
-      126.95,
-      50.06,
-      8.83,
-      "Obertshausen",
-      "63179",
-      "DE",
-      false,
-      null,
-      "Amprion",
-      5759,
-      999.38,
-      480.0,
-      0.0,
-      180.0,
-      15.0,
-      1,
-      null,
-      null,
-      null
-    ],
-    [
-      "4507",
-      557.75,
-      48.9,
-      10.3,
-      "test_2",
-      null,
-      null,
-      null,
-      null,
-      null,
-      5796,
-      320.0,
-      300.0,
-      0.0,
-      50.0,
-      15.0,
-      1,
-      null,
-      null,
-      null
-    ]
-  ]
+    "nighttime_curtailment",
+    "start_nighttime_curtailment",
+    "end_nighttime_curtailment",
+    "curtailment_level",
+    "time_zone_curtailment",
+    "mrl_power",
+    "eeg_key",
+    "turbine_id",
+    "hub_height",
+    "rotor_diameter",
+    "turbine_type",
+    "installed_power"
+  ],"index":[0,1],
+  "data":[
+    ["WP123",176.6,51.52,7.76,"Test-site",null,null,null,null,null,null,null,null,null,null,658,110.0,136.0,"VS136/3500",3500.0],
+    ["WP123",176.6,51.52,7.76,"Test-site",null,null,null,null,null,null,null,null,null,null,659,110.0,136.0,"VS136/3500",3500.0]]
 }
 ```
 
@@ -285,14 +231,14 @@ In case you use the html- Response of the API the systems will be shown in a tab
 
 ## Delete system from your portfolio
 
-In case you want to delete a pv-system from your portfolio, you can simply use a POST request to the endpoint `pv_systems/delete/` it. Please use your individually defined location_id to delete the system: 
+In case you want to delete a pv-system from your portfolio, you can simply use a POST request to the endpoint `wind_parks/delete/` it. Please use your individually defined location_id to delete the system: 
 
 === "python requests"
 
     ``` python
     import requests
     
-    url = "https://api.alitiq.com/solar/pv_systems/delete/"
+    url = "https://api.alitiq.com/wind/wind_parks/delete/"
     
     querystring = {"location_id": "your-location-id-to-delete"}
     
@@ -306,13 +252,13 @@ In case you want to delete a pv-system from your portfolio, you can simply use a
 === "alitiq-py"
 
     ``` python
-    from alitiq import alitiqSolarAPI
+    from alitiq import alitiqWindAPI
     
     # Initialize the API client
-    solar_api = alitiqSolarAPI(api_key="your-api-key")
+    wind_api = alitiqWindAPI(api_key="your-api-key")
     
     # delete location 
-    response = solar_api.delete_location("your-location-id-to_delete")
+    response = wind_api.delete_location("your-location-id-to_delete")
     print(response.text)
     ```
 
@@ -329,29 +275,17 @@ In case you want to delete a pv-system from your portfolio, you can simply use a
 
 ## FAQs ❓ 
 
-### Which temp_factor should I use? 
+### My turbine is not listed?
 
-The **temperature factor** (temp_factor) accounts for the temperature-related efficiency loss of PV systems. Use the appropriate value based on the type of mounting for accurate forecasting.  
-
-| **System Type**        | **Description**                        | **Temp Factor (temp_factor)** |
-|-------------------------|----------------------------------------|-------------------------------|
-| Free-Mounted Systems    | Modules mounted on open frames with good ventilation | `0.0033`                      |
-| Roof-Mounted Systems    | Modules mounted on roofs with moderate ventilation | `0.004`                       |
-| Roof-Integrated Systems | Modules integrated into the roof with limited ventilation | `0.005`                       |  
-
----
-
-
-### What if my power plant has only one subsystem?  
-You can omit the `subsystems` field and define the **azimuth**, **tilt**, and **installed_power** at the plant level.  
+Feel free to contact us as [support@alitiq.com](mailto:support@alitiq.com)  . In the meantime, you can choose `DEFAULT` as turbine type, and submit an installed power. 
 
 ### Can I update the location later?  
-Yes, you can use the `update_location` method to modify the configuration of an existing location.  
+
+Currently not, this feature is under development. Please `delete` the WindPark and re-configure it.
 
 ---
 
 ## Support & Feedback 💬  
 - **Contact Support**: [support@alitiq.com](mailto:support@alitiq.com)  
-- **Documentation**: [Solar Forecasting Docs](https://alitiq.com/solar-api-docs) (coming soon)  
 
 🌟 **Start forecasting smarter with alitiq today!** 🌟  

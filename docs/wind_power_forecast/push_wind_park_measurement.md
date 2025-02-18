@@ -117,15 +117,15 @@ Here’s an example demonstrating how to submit measurement data using the `meas
 
     ``` python
     from datetime import datetime
-    from alitiq import alitiqWindAPI, PvMeasurementForm
+    from alitiq import alitiqWindAPI, WindPowerMeasurementForm
     
     # Initialize the API client
     wind_api = alitiqWindAPI(api_key="your-api-key")
     
     # Create measurement data
     wind_power_measurement = [
-        PvMeasurementForm(
-            location_id="SP123",
+        WindPowerMeasurementForm(
+            location_id="WP123",
             dt=datetime(2024, 6, 10, 10).isoformat(),
             power=120.5,
             power_measure="kW",
@@ -133,8 +133,8 @@ Here’s an example demonstrating how to submit measurement data using the `meas
             interval_in_minutes=15,
             window_boundary="end",
         ),
-        PvMeasurementForm(
-            location_id="SP123",
+        WindPowerMeasurementForm(
+            location_id="WP123",
             dt=datetime(2024, 6, 10, 10, 15).isoformat(),
             power=90.8,
             power_measure="kW",
@@ -142,8 +142,8 @@ Here’s an example demonstrating how to submit measurement data using the `meas
             interval_in_minutes=15,
             window_boundary="end",
         ),
-        PvMeasurementForm(
-            location_id="SP123",
+        WindPowerMeasurementForm(
+            location_id="WP123",
             dt=datetime(2024, 6, 10, 10, 30).isoformat(),
             power=150.0,
             power_measure="kW",
@@ -169,7 +169,7 @@ Here’s an example demonstrating how to submit measurement data using the `meas
       --header 'x-api-key: {api-key}' \
       --data '[
         {
-            "location_id": "2",
+            "location_id": "WP123",
             "dt": "2022-03-06T09:45:00.000",
             "power": 201.0,
             "interval_in_minutes": 15,
@@ -178,7 +178,7 @@ Here’s an example demonstrating how to submit measurement data using the `meas
             "power_measure": "kW"
         },
         {
-            "location_id": "2",
+            "location_id": "WP123",
             "dt": "2022-03-06T10:00:00.000",
             "power": 213.0,
             "interval_in_minutes": 15,
@@ -187,7 +187,7 @@ Here’s an example demonstrating how to submit measurement data using the `meas
             "power_measure": "kW"
         },
         {
-            "location_id": "2",
+            "location_id": "WP123",
             "dt": "2022-03-06T10:15:00.000",
             "power": 242.0,
             "interval_in_minutes": 15,
@@ -196,7 +196,7 @@ Here’s an example demonstrating how to submit measurement data using the `meas
             "power_measure": "kW"
         },
         {
-            "location_id": "2",
+            "location_id": "WP123",
             "dt": "2022-03-06T10:30:00.000",
             "power": 270.0,
             "interval_in_minutes": 15,
@@ -205,7 +205,7 @@ Here’s an example demonstrating how to submit measurement data using the `meas
             "power_measure": "kW"
         },
         {
-            "location_id": "2",
+            "location_id": "WP123",
             "dt": "2022-03-06T10:45:00.000",
             "power": 320,
             "interval_in_minutes": 15,
@@ -214,7 +214,7 @@ Here’s an example demonstrating how to submit measurement data using the `meas
             "power_measure": "kW"
         },
         {
-            "location_id": "2",
+            "location_id": "WP123",
             "dt": "2022-03-06T11:00:00.000",
             "power": 397,
             "interval_in_minutes": 15,
@@ -224,9 +224,6 @@ Here’s an example demonstrating how to submit measurement data using the `meas
         }
     ]'
     ```
-
----
-
 
 
 ---
@@ -243,7 +240,7 @@ Here’s an example demonstrating how to submit measurement data using the `meas
 - **Batch Submissions**: Push multiple measurements in a single API call for efficiency.  
 - **Time Synchronization**: Ensure timestamps (`dt`) are accurate and in the correct timezone.  
 - **Historical Data**: Provide at least 90 days of measurements to unlock optimized forecasting.  
-- **Validation**: Use the SDK's `PvMeasurementForm` for automatic data validation.  
+- **Validation**: Use the SDK's `WindPowerMeasurementForm` for automatic data validation.  
 
 ---
 

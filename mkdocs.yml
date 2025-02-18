@@ -165,6 +165,7 @@ nav:
       - Inspect measurements in alitiqs database: wind_power_forecast/inspect_wind_park_measurement.md
       - Get access to Forecasts: wind_power_forecast/wind_power_forecast.md
       - Check for available forecast runs: wind_power_forecast/check_available_runs.md
+      - Available Turbine types: wind_power_forecast/available_turbine_types.md
   - Load Forecast :
       - Push measured load data: load_forecast/push_load_measurement.md
       - Inspect measured load data: load_forecast/inspect_load_measurement.md

@@ -345,13 +345,13 @@ The **temperature factor** (temp_factor) accounts for the temperature-related ef
 ### What if my power plant has only one subsystem?  
 You can omit the `subsystems` field and define the **azimuth**, **tilt**, and **installed_power** at the plant level.  
 
-### Can I update the location later?  
-Yes, you can use the `update_location` method to modify the configuration of an existing location.  
+### Can I update the location later?
+
+Currently not, this feature is under development. Please `delete` the system and re-configure it.
 
 ---
 
 ## Support & Feedback 💬  
 - **Contact Support**: [support@alitiq.com](mailto:support@alitiq.com)  
-- **Documentation**: [Solar Forecasting Docs](https://alitiq.com/solar-api-docs) (coming soon)  
 
 🌟 **Start forecasting smarter with alitiq today!** 🌟  
