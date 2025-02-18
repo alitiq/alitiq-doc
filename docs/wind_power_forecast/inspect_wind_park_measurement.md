@@ -1,12 +1,12 @@
-# How to Inspect Measurement Data with the alitiq Solar API 🔍  
+# How to Inspect Measurement Data with the alitiq Windpower API 🔍  
 
-The alitiq Solar API provides powerful tools to inspect and analyze the historical measurement data for your Solar PV systems. This feature allows you to validate submitted data, track system performance, and gain insights into your solar installation.  
+The alitiq Wind API provides powerful tools to inspect and analyze the historical measurement data for your Windpark. This feature allows you to validate submitted data, track windpark performance, and gain insights into your portfolio.  
 
 ---
 
 ## Overview  
 
-Inspecting data involves retrieving historical measurement records stored in the alitiq system for a specific Solar PV system. You can define a time range, customize the output format, and perform detailed analysis on the retrieved data.
+Inspecting data involves retrieving historical measurement records stored in the alitiq database for a specific Windpark (aka location). You can define a time range, customize the output format, and perform detailed analysis on the retrieved data.
 
 ---
 
@@ -44,9 +44,9 @@ Below is an example of how to use the `measurement/inspect/` endpoint to inspect
     ``` python
     import requests
     
-    url = "https://api.alitiq.com/solar/measurement/inspect/"
+    url = "https://api.alitiq.com/wind/measurement/inspect/"
     
-    querystring = {"location_id":"123","response_format":"json"}
+    querystring = {"location_id":"WP123","response_format":"json"}
     
     payload = ""
     headers = {"x-api-key": "api-key"}
@@ -60,18 +60,18 @@ Below is an example of how to use the `measurement/inspect/` endpoint to inspect
 
     ``` python
     from datetime import datetime, timedelta
-    from alitiq import alitiqSolarAPI
+    from alitiq import alitiqWindAPI
     
     # Initialize the API client
-    solar_api = alitiqSolarAPI(api_key="your-api-key")
+    wind_api = alitiqWindAPI(api_key="your-api-key")
     
     # Define the location and date range
-    location_id = "SP123"
+    location_id = "WP123"
     start_date = datetime.now() - timedelta(days=7)  # 7 days ago
     end_date = datetime.now()  # Today
     
     # Inspect measurement data
-    data = solar_api.get_measurements(
+    data = wind_api.get_measurements(
         location_id=location_id, 
         start_date=start_date, 
         end_date=end_date
@@ -85,7 +85,7 @@ Below is an example of how to use the `measurement/inspect/` endpoint to inspect
 
     ``` bash
     curl --request GET \
-      --url 'https://api.alitiq.com/solar/measurement/inspect/?location_id=123&response_format=json' \
+      --url 'https://api.alitiq.com/wind/measurement/inspect/?location_id=123&response_format=json' \
       --header 'x-api-key: api-key'
     ``` 
 
@@ -99,9 +99,9 @@ The API returns the measurement data in a pandas-compatible format (e.g., JSON),
 ```plaintext
 |       dt        |   power   |  
 |-----------------|-----------|
-| 2024-06-10 10:00|  120.5    | 
-| 2024-06-10 10:15|  90.8     | 
-| 2024-06-10 10:30|  150.0    |
+| 2024-06-10 10:00|  2120.5    | 
+| 2024-06-10 10:15|  2090.8    | 
+| 2024-06-10 10:30|  2150.0    |
 ```  
 
 ---
