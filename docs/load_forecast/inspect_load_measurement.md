@@ -40,7 +40,7 @@ Below is an example of how to use the `measurement/inspect/` endpoint to inspect
     ``` python
     import requests
     
-    url = "https://api.alitiq.com/load/forecast/single/"
+    url = "https://api.alitiq.com/load/measurement/inspect/"
     
     querystring = {"location_id":"123","response_format":"json"}
     
