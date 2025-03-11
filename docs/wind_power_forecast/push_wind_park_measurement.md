@@ -225,6 +225,10 @@ Here’s an example demonstrating how to submit measurement data using the `meas
     ]'
     ```
 
+!!! note
+
+     Only up to 10000 samples are allowed to push at one call. We recommend to batch the data into monthly slices for each system.
+
 
 ---
 

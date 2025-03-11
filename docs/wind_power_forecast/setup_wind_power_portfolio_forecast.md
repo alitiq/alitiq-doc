@@ -139,6 +139,10 @@ To add a new location to your portfolio, you have to use the `wind_parks/add/` e
       }'
     ``` 
 
+!!! note
+
+    After you have created your first or new Windpark, it takes up to 6 hours to receive a first baseline forecast. Optimized forecast are available the next day in case you have provided measurement data from the system.
+
 
 ---
 
