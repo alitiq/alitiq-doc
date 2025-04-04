@@ -19,7 +19,7 @@ Now let's start with your first steps in the alitiq solar-app.
 ### 1. Setup your PV systems
 To receive first forecast, you need to setup your PV-systems. Move on to the menue bar on the left hand side and select the `Portfolio` tab. You will see two tabs, one for the overview of your `Portfolio` and one to `Add new PV-system`. Take the last one to move on. 
 
-For this step we have a dedicated page to explain how to setup a system in our portal [here](https://makandracards.com/alitiq/621166-setup-pv-system-solar-power-forecast-alitiq)
+For this step we have a dedicated page to explain how to setup a system in our portal [here](https://docs.alitiq.com/knowledge/2025/02/02/-setup-your-pv-system-for-solar-power-forecast--alitiq/)
 
 ### 2. Wait ⏳
 We are very sorry, but now we have to wait until the next cycle of forecasts are running. It takes a maximum of 6 hours to see forecasts from all available models. 
