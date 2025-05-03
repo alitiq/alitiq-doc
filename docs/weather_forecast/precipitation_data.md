@@ -1,6 +1,6 @@
 # 🌧️ Precipitation data API
 
-This API provides access to **short-term precipitation forecast data** (at 10-minute intervals) using the RADOLAN nowcast product. You can query by coordinates, zip code, or city name and retrieve data in JSON, CSV, or HTML formats.
+This API provides access to **precipitation observation data** (at 10-minute intervals) using the RADOLAN "RW" product. You can query by coordinates, zip code, or city name and retrieve data in JSON, CSV, or HTML formats.
 
 ---
 
