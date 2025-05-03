@@ -30,7 +30,7 @@ The endpoint for this service is `api.alitiq.com/load`
 Weather is our profession but not our business. Eitherways weather data is a basis for our enhanced forecasts. So we make available any kind of weather information via out Weather API. 
 
 - **Weather Forecast**: Obtain weather forecasts for individual locations from several leading national weather services.  
-- **Weather Observations**: Access a global network of weather observations. 
+- **Weather Observations**: Access a global network of weather observations ranging from remote sesnsing (radar, satellite) to point observations 
 
 The endpoint for this service is `api.alitiq.com/weather`
 

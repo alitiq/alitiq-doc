@@ -174,5 +174,7 @@ nav:
       - Intro to weather forecasting API: weather_forecast/intro.md
       - Retrieve Weather Forecast: weather_forecast/retrieve_weather_forecast.md
       - Access Weather observations: weather_forecast/access_weather_observations.md
+      - Precipitation: weather_forecast/precipitation_data.md
+      - Irradiance: weather_forecast/irradiance_data.md
   - Knowledge:
     - knowledge/index.md
