@@ -27,7 +27,7 @@ To access a forecast for a specific Solar PV system, use the `forecast/single/` 
     
     url = "https://api.alitiq.com/solar/forecast/single/"
     
-    querystring = {"location_id":"123","response_format":"html","weather_model":"icon_eu","tz":"UTC","power_measure":"kW","interval_in_minutes":"15"}
+    querystring = {"location_id":"123","response_format":"html","weather_model":"icon_eu","timezone":"UTC","power_measure":"kW","interval_in_minutes":"15"}
     
     payload = ""
     headers = {"x-api-key": "your-api-key"}
@@ -64,7 +64,7 @@ To access a forecast for a specific Solar PV system, use the `forecast/single/` 
 
     ``` bash
     curl --request GET \
-      --url 'https://api.alitiq.com/solar/forecast/single/?location_id=123&response_format=json&weather_model=icon_eu&tz=UTC&power_measure=kW&interval_in_minutes=15' \
+      --url 'https://api.alitiq.com/solar/forecast/single/?location_id=123&response_format=json&weather_model=icon_eu&timezone=UTC&power_measure=kW&interval_in_minutes=15' \
       --header 'x-api-key: your-api-key'
     ``` 
 
@@ -86,7 +86,7 @@ To access a forecast for your whole portfolio of PV systems, use the `forecast/p
     
     url = "https://api.alitiq.com/solar/forecast/portfolio/"
     
-    querystring = {"response_format":"html","weather_model":"icon_eu","tz":"UTC","power_measure":"kW","interval_in_minutes":"15", "portfolio_sum_column":"False"}
+    querystring = {"response_format":"html","weather_model":"icon_eu","timezone":"UTC","power_measure":"kW","interval_in_minutes":"15", "portfolio_sum_column":"False"}
     
     payload = ""
     headers = {"x-api-key": "your-api-key"}
@@ -123,7 +123,7 @@ To access a forecast for your whole portfolio of PV systems, use the `forecast/p
 
     ``` bash
     curl --request GET \
-      --url 'https://api.alitiq.com/solar/forecast/portfolio/?response_format=html&weather_model=icon_eu&tz=UTC&power_measure=kW&interval_in_minutes=15' \
+      --url 'https://api.alitiq.com/solar/forecast/portfolio/?response_format=html&weather_model=icon_eu&timezone=UTC&power_measure=kW&interval_in_minutes=15' \
       --header 'x-api-key: your-api-key'
     ```
 

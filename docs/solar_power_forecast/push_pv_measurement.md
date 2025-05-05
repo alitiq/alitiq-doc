@@ -108,7 +108,7 @@ Here’s an example demonstrating how to submit measurement data using the `meas
             "power": 397,
             "irradiance": -1,
             "interval_in_minutes": 15,
-            "tz": "UTC",
+            "timezone": "UTC",
             "window_boundary": "end",
             "power_measure": "kW"
         }
