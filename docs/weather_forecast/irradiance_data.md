@@ -57,20 +57,17 @@ It allows you to query irradiance time series for a given point location, either
 
     ```python
     import requests
+    import pandas as pd
+    from io import BytesIO
     
-    url = "https://api.alitiq.com/weather/irradiance"
+    url = "https://api.alitiq.com/weather/irradiance/"
     
-    params = {
-        "latitude": 48.8566,
-        "longitude": 2.3522,
-        "start_date": "2024-05-01T06:00",
-        "end_date": "2024-05-01T12:00",
-        "response_format": "json"
-    }
+    querystring = {"latitude":47.99444,"longitude":10.692917,"response_format":"json"}
+    payload = ""
+    headers = {"x-api-key": "your-api-key"}
     
-    response = requests.get(url, params=params)
-    
-    print(response.text)
+    response = requests.request("GET", url, data=payload, headers=headers, params=querystring)
+    data = pd.read_json(BytesIO(response.content), orient='split')
     ```
 
 
@@ -78,5 +75,6 @@ It allows you to query irradiance time series for a given point location, either
 
     ```bash
     curl --request GET \
-      --url 'https://api.alitiq.com/weather/irradiance?latitude=48.8566&longitude=2.3522&start_date=2024-05-01T06:00&end_date=2024-05-01T12:00&response_format=json'
+      --header 'x-api-key: {api-key}' \
+      --url 'https://api.alitiq.com/weather/irradiance?latitude=48.8566&longitude=2.3522&start_date=2025-05-01T06:00&end_date=2025-05-01T12:00&response_format=json'
     ```

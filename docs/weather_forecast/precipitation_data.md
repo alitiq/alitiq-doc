@@ -54,21 +54,19 @@ This API returns a short-term precipitation **forecast** at 10-minute intervals 
 === "python requests"
 
     ``` python
-    import requests
 
+    import requests
+    import pandas as pd
+    from io import BytesIO
+    
     url = "https://api.alitiq.com/weather/precipitation"
     
-    params = {
-        "latitude": 52.52,
-        "longitude": 13.405,
-        "start_date": "2024-05-01T00:00",
-        "end_date": "2024-05-01T03:00",
-        "response_format": "json"
-    }
+    querystring = {"latitude":47.99444,"longitude":10.692917,"response_format":"json"}
+    payload = ""
+    headers = {"x-api-key": "your-api-key"}
     
-    response = requests.get(url, params=params)
-    
-    print(response.text)
+    response = requests.request("GET", url, data=payload, headers=headers, params=querystring)
+    data = pd.read_json(BytesIO(response.content), orient='split')
 
     ```
 
@@ -77,20 +75,12 @@ This API returns a short-term precipitation **forecast** at 10-minute intervals 
     ``` bash
 
     curl --request GET \
+    --header 'x-api-key: {api-key}' \
     --url 'https://api.alitiq.com/weather/precipitation?latitude=52.52&longitude=13.405&start_date=2024-05-01T00:00&end_date=2024-05-01T03:00&response_format=json'
     
 
 
     ```
-
-=== "http"
-
-    ```http
-    GET https://api.alitiq.com/weather/precipitation?latitude=52.52&longitude=13.405&start_date=2024-05-01T00:00&end_date=2024-05-01T03:00&response_format=json
-    GET https://api.alitiq.com/weather/precipitation?zip_code=10115&start_date=2024-05-01&end_date=2024-05-01&response_format=csv
-    GET https://api.alitiq.com/weather/precipitation?city_name=Berlin&response_format=html
-    ```
-
 ---
 
 ## 🧾 Response Formats
