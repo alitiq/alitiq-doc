@@ -3,14 +3,14 @@
 The endpoint for querying weather observations is `observation` or `observation_global`, with service tiers such as `daily`, `hourly`, and `search`.
 
 ### Endpoints:
-- [`https://api.alitiq.com/observation/?`](https://api.alitiq.com/observation/?)
-- [`https://api.alitiq.com/observation_global/<service>/?`](https://api.alitiq.com/observation_global/\<service>/?)
+- [`https://api.alitiq.com/weather/observation/?`](https://api.alitiq.com/observation/?)
+- [`https://api.alitiq.com/weather/observation_global/<service>/?`](https://api.alitiq.com/observation_global/\<service>/?)
 
 ---
 
 ## Endpoint: Observation
 
-[`https://api.alitiq.com/observation/?`](https://api.alitiq.com/observation/?)
+[`https://api.alitiq.com/weather/observation/?`](https://api.alitiq.com/weather/observation/?)
 
 This endpoint allows you to request measurement data from the **German Weather Service (DWD)** and other weather services with a 10-minute resolution. The following regions are supported:
 
