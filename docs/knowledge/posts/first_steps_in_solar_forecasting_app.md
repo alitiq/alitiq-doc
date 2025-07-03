@@ -31,9 +31,8 @@ Now we are ready that you can view your forecasts. Navigate to the `Forecast` ta
 
 ### 4. Plugin the API to your system 🔌
 
-In the `Forecast`view you will see a tiny API endpoint creator. It will help you to setup the right API calls. For further details on how to receive data from the API take a look into our [API Doc](https://makandracards.com/alitiq/621075-alitiq-solar-api)
+In the `Forecast`view you will see a tiny API endpoint creator. It will help you to setup the right API calls. For further details on how to receive data from the API take a look into our [API Doc](https://docs.alitiq.com/solar_power_forecast/setup_pv_portfolio_forecast/)
 
-**Important**:  The first number after solar.alitiq.com/forecast/single/XY is your `customer_id`. 
 
 ### 5. Optimized Forecast 🧠
 To receive our AI-optimized forecasts, you simply need to push measurements/production data back at least 90 days from now via API. If you do not provide measurements/production data of you PV-systems, a default will be selected for the `optimized` model. 
