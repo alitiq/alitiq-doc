@@ -37,95 +37,95 @@ Use the `/wind/curtailments/add/` endpoint to submit data.
 
 === "python requests"
 
-```python
-import requests
+    ```python
+    import requests
 
-url = "https://api.alitiq.com/wind/curtailments/add/"
+    url = "https://api.alitiq.com/wind/curtailments/add/"
 
-payload = [
-    {
-        "location_id": "WP001",
-        "dt": "2024-06-10T10:00:00.000",
-        "level": 320.0,
-        "interval_in_minutes": 15,
-        "timezone": "UTC",
-        "window_boundary": "end"
-    },
-    {
-        "location_id": "WP001",
-        "dt": "2024-06-10T10:15:00.000",
-        "level": 305.5,
-        "interval_in_minutes": 15,
-        "timezone": "UTC",
-        "window_boundary": "end"
-    }
-]
-headers = {"Content-Type": "application/json", "x-api-key": "{your-api-key}"}
+    payload = [
+        {
+            "location_id": "WP001",
+            "dt": "2024-06-10T10:00:00.000",
+            "level": 320.0,
+            "interval_in_minutes": 15,
+            "timezone": "UTC",
+            "window_boundary": "end"
+        },
+        {
+            "location_id": "WP001",
+            "dt": "2024-06-10T10:15:00.000",
+            "level": 305.5,
+            "interval_in_minutes": 15,
+            "timezone": "UTC",
+            "window_boundary": "end"
+        }
+    ]
+    headers = {"Content-Type": "application/json", "x-api-key": "{your-api-key}"}
 
-response = requests.post(url, json=payload, headers=headers)
-print(response.text)
-```
+    response = requests.post(url, json=payload, headers=headers)
+    print(response.text)
+    ```
 
 === "alitiq-py SDK"
 
-```python
-from datetime import datetime
-from alitiq import alitiqWindAPI, CurtailmentForm
+    ```python
+    from datetime import datetime
+    from alitiq import alitiqWindAPI, CurtailmentForm
 
-# Initialize API client
-wind_api = alitiqWindAPI(api_key="your-api-key")
+    # Initialize API client
+    wind_api = alitiqWindAPI(api_key="your-api-key")
 
-# Create curtailment records
-curtailments = [
-    CurtailmentForm(
-        location_id="WP001",
-        dt=datetime(2024, 6, 10, 10, 0).isoformat(),
-        level=320.0,
-        interval_in_minutes=15,
-        timezone="UTC",
-        window_boundary="end",
-    ),
-    CurtailmentForm(
-        location_id="WP001",
-        dt=datetime(2024, 6, 10, 10, 15).isoformat(),
-        level=305.5,
-        interval_in_minutes=15,
-        timezone="UTC",
-        window_boundary="end",
-    ),
-]
+    # Create curtailment records
+    curtailments = [
+        CurtailmentForm(
+            location_id="WP001",
+            dt=datetime(2024, 6, 10, 10, 0).isoformat(),
+            level=320.0,
+            interval_in_minutes=15,
+            timezone="UTC",
+            window_boundary="end",
+        ),
+        CurtailmentForm(
+            location_id="WP001",
+            dt=datetime(2024, 6, 10, 10, 15).isoformat(),
+            level=305.5,
+            interval_in_minutes=15,
+            timezone="UTC",
+            window_boundary="end",
+        ),
+    ]
 
-# Post to the API
-response = wind_api.post_curtailments(curtailments)
-print("API Response:", response)
-```
+    # Post to the API
+    response = wind_api.post_curtailments(curtailments)
+    print("API Response:", response)
+    ```
 
 === "cURL"
 
-```bash
-curl --request POST \
-  --url https://api.alitiq.com/wind/curtailments/add/ \
-  --header 'Content-Type: application/json' \
-  --header 'x-api-key: {your-api-key}' \
-  --data '[
-    {
-        "location_id": "WP001",
-        "dt": "2024-06-10T10:00:00.000",
-        "level": 320.0,
-        "interval_in_minutes": 15,
-        "timezone": "UTC",
-        "window_boundary": "end"
-    },
-    {
-        "location_id": "WP001",
-        "dt": "2024-06-10T10:15:00.000",
-        "level": 305.5,
-        "interval_in_minutes": 15,
-        "timezone": "UTC",
-        "window_boundary": "end"
-    }
-]'
-```
+    ```bash
+    curl --request POST \
+    --url https://api.alitiq.com/wind/curtailments/add/ \
+    --header 'Content-Type: application/json' \
+    --header 'x-api-key: {your-api-key}' \
+    --data '[
+        {
+            "location_id": "WP001",
+            "dt": "2024-06-10T10:00:00.000",
+            "level": 320.0,
+            "interval_in_minutes": 15,
+            "timezone": "UTC",
+            "window_boundary": "end"
+        },
+        {
+            "location_id": "WP001",
+            "dt": "2024-06-10T10:15:00.000",
+            "level": 305.5,
+            "interval_in_minutes": 15,
+            "timezone": "UTC",
+            "window_boundary": "end"
+        }
+    ]'
+    ```
 
 !!! note
     You can push **up to 10,000** curtailment records in one call. It is recommended to **batch** data by month per system.
