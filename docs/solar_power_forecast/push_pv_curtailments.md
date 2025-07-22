@@ -78,7 +78,7 @@ Use the `/solar/curtailments/add/` endpoint to submit data.
     # Create curtailment records
     curtailments = [
         CurtailmentForm(
-            location_id="WP001",
+            location_id="SP001",
             dt=datetime(2024, 6, 10, 10, 0).isoformat(),
             level=320.0,
             interval_in_minutes=15,
@@ -86,7 +86,7 @@ Use the `/solar/curtailments/add/` endpoint to submit data.
             window_boundary="end",
         ),
         CurtailmentForm(
-            location_id="WP001",
+            location_id="SP001",
             dt=datetime(2024, 6, 10, 10, 15).isoformat(),
             level=305.5,
             interval_in_minutes=15,
