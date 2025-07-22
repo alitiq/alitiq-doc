@@ -24,7 +24,7 @@ When submitting curtailment data, include the following fields:
 |----------------------|------------------|-------------------------------------------------------------------|----------------|
 | `location_id`        | `str`            | Unique ID of the wind park where the curtailment occurred.       | None           |
 | `dt`                 | `datetime` or `pandas.Timestamp` | Timestamp representing the curtailment's time window.         | None           |
-| `level`              | `float`          | Magnitude of curtailment (e.g., in kW or % of capacity).          | None           |
+| `level`              | `float`          | Magnitude of curtailment (values between 0 and 1 ).          | None           |
 | `timezone`           | `str`            | Timezone of the timestamp.                                        | `UTC`          |
 | `interval_in_minutes` | `int`           | Interval length that the timestamp refers to.                     | `15`           |
 | `window_boundary`    | `str`            | Defines alignment of `dt` (`begin`, `center`, or `end`).          | `end`          |
@@ -46,7 +46,7 @@ Use the `/wind/curtailments/add/` endpoint to submit data.
         {
             "location_id": "WP001",
             "dt": "2024-06-10T10:00:00.000",
-            "level": 320.0,
+            "level": 1.0,
             "interval_in_minutes": 15,
             "timezone": "UTC",
             "window_boundary": "end"
@@ -54,7 +54,7 @@ Use the `/wind/curtailments/add/` endpoint to submit data.
         {
             "location_id": "WP001",
             "dt": "2024-06-10T10:15:00.000",
-            "level": 305.5,
+            "level": 1.0,
             "interval_in_minutes": 15,
             "timezone": "UTC",
             "window_boundary": "end"
@@ -80,7 +80,7 @@ Use the `/wind/curtailments/add/` endpoint to submit data.
         CurtailmentForm(
             location_id="WP001",
             dt=datetime(2024, 6, 10, 10, 0).isoformat(),
-            level=320.0,
+            level=1.0,
             interval_in_minutes=15,
             timezone="UTC",
             window_boundary="end",
@@ -88,7 +88,7 @@ Use the `/wind/curtailments/add/` endpoint to submit data.
         CurtailmentForm(
             location_id="WP001",
             dt=datetime(2024, 6, 10, 10, 15).isoformat(),
-            level=305.5,
+            level=1.0,
             interval_in_minutes=15,
             timezone="UTC",
             window_boundary="end",
@@ -111,7 +111,7 @@ Use the `/wind/curtailments/add/` endpoint to submit data.
         {
             "location_id": "WP001",
             "dt": "2024-06-10T10:00:00.000",
-            "level": 320.0,
+            "level": 1.0,
             "interval_in_minutes": 15,
             "timezone": "UTC",
             "window_boundary": "end"
@@ -119,7 +119,7 @@ Use the `/wind/curtailments/add/` endpoint to submit data.
         {
             "location_id": "WP001",
             "dt": "2024-06-10T10:15:00.000",
-            "level": 305.5,
+            "level": 1.0,
             "interval_in_minutes": 15,
             "timezone": "UTC",
             "window_boundary": "end"
