@@ -5,7 +5,7 @@ categories:
   - IO
 ---
 
-# Why Understanding Curtailments and Unavailabilities Matters for Wind Power Forecasting ⚡🌬️
+# Why Understanding Curtailments and Unavailabilities Matters for Power Forecasting ⚡🌬️
 
 *By the alitiq Forecast Team*
 
