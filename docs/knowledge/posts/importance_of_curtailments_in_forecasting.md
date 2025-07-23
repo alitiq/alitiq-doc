@@ -7,10 +7,6 @@ categories:
 
 # Why Understanding Curtailments and Unavailabilities Matters for Power Forecasting ⚡🌬️
 
-*By the alitiq Forecast Team*
-
----
-
 In the quest for accurate wind power forecasting, there's one reality that often gets in the way: **real-world power output does not always reflect the full capacity of your wind turbines** or **pv systems**. This discrepancy is frequently caused by *curtailments* and *unavailabilities*.
 
 <!-- more -->
