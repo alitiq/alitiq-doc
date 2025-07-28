@@ -8,7 +8,7 @@ Welcome to the **alitiq Wind Power Forecasting API**! This guide explains how to
 
 In the **alitiq Wind API**, a **WindPark** is represented as a location with one or more **wind turbines**. Forecasts are generated for an entire **WindPark**, not for individual turbines.  
 
-A list of available wind turbines can be found **[here](https://docs.alitiq.com/wind_power_forecast/available_turbines_types)**.  
+A list of available wind turbines can be found **[here](https://docs.alitiq.com/wind_power_forecast/available_turbine_types/)**.  
 
 ---
 
