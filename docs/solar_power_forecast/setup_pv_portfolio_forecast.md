@@ -132,6 +132,45 @@ To add a new location to your portfolio, you have to use the `pv_systems/add/` e
 
 ---
 
+#### Tracking system
+
+Tracking systems are more advanced components in PV system modeling and require additional configuration details to accurately simulate system behavior.
+
+The supported tracking types are:
+
+* **No Tracking**: `0` or `1`
+* **Single Axis Tracking (Vertical Axis)**: `2`
+  *(Note: This is very rare and currently not supported.)*
+* **Single Axis Tracking (Horizontal Axis)**: `3`
+  *(This is the most common type.)*
+* **Dual Axis Tracking**: `4`
+  *(Rare, but supported.)*
+
+##### Dual Axis Tracking
+
+For dual-axis systems, no additional geometric parameters are needed. The modules follow the sun's position in both azimuth and zenith, offering optimal irradiance capture throughout the day.
+
+##### Single Axis Tracking
+
+For horizontal single-axis tracking systems (type `3`), the following parameters must be provided:
+
+* **`table_length`**: Length of the PV table (in meters)
+
+* **`row_distance`**: Distance between adjacent tracker rows (in meters)
+  These two parameters are used to calculate the *Ground Coverage Ratio (GCR)*.
+
+* **`do_backtracking`**: Boolean flag indicating whether backtracking is enabled
+  *(Backtracking reduces shading between rows during early morning and late afternoon.)*
+
+* **`max_rotation_angle`**: The maximum rotation angle (in degrees) allowed for the tracker
+
+##### System Alignment Notes
+
+Adapt the following parameters based on your system configuration:
+
+* If your tracker rows are aligned **north-south** (most common), set the **`azimuth` or `orientation`** to **180°**
+* For systems installed on **flat ground**, set the **`tilt`** to **0°**
+
 
 ## Inspect your portfolio 
 
