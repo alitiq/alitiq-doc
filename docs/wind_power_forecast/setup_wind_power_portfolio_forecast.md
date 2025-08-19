@@ -138,10 +138,10 @@ To add a new location to your portfolio, you have to use the `wind_parks/add/` e
         ]
       }'
     ``` 
-
 !!! note
 
-    After you have created your first or new Windpark, it takes up to 6 hours to receive a first baseline forecast. Optimized forecast are available the next day in case you have provided measurement data from the system.
+    After you have created your first or new pv system, it takes up to 6 hours to receive a first forecast under `optimized`. When you do not provide measurement data, the `optimized` is just a baseline forecast. No optimisation was done int htat case. Baseline forecast under `icon_eu` or `icon_global` is available with a delay of 5 minutes after creation.
+    Optimized forecast are available the next day in case you have provided measurement data from the system.
 
 
 ---

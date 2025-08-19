@@ -172,6 +172,7 @@ nav:
       - Push measured load data: load_forecast/push_load_measurement.md
       - Inspect measured load data: load_forecast/inspect_load_measurement.md
       - Get access to Load Forecasts: load_forecast/load_power_forecast.md
+      - Manage Load Forecast portfolio: load_forecast/setup_load_forecast_location.md
   - Weather API :
       - Intro to weather forecasting API: weather_forecast/intro.md
       - Retrieve Weather Forecast: weather_forecast/retrieve_weather_forecast.md
