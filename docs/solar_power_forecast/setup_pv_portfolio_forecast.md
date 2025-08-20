@@ -261,7 +261,7 @@ Example response json:
       5599,
       709.3,
       636.0,
-      0.0,
+      0.03,
       195.0,
       10.0,
       1,
@@ -283,7 +283,7 @@ Example response json:
       5759,
       999.38,
       480.0,
-      0.0,
+      0.03,
       180.0,
       15.0,
       1,
@@ -305,7 +305,7 @@ Example response json:
       5796,
       320.0,
       300.0,
-      0.0,
+      0.03,
       50.0,
       15.0,
       1,
@@ -377,9 +377,9 @@ The **temperature factor** (temp_factor) accounts for the temperature-related ef
 
 | **System Type**        | **Description**                        | **Temp Factor (temp_factor)** |
 |-------------------------|----------------------------------------|-------------------------------|
-| Free-Mounted Systems    | Modules mounted on open frames with good ventilation | `0.0033`                      |
-| Roof-Mounted Systems    | Modules mounted on roofs with moderate ventilation | `0.004`                       |
-| Roof-Integrated Systems | Modules integrated into the roof with limited ventilation | `0.005`                       |  
+| Free-Mounted Systems    | Modules mounted on open frames with good ventilation | `0.03`                      |
+| Roof-Mounted Systems    | Modules mounted on roofs with moderate ventilation | `0.035`                       |
+| Roof-Integrated Systems | Modules integrated into the roof with limited ventilation | `0.05`                       |  
 
 ---
 
