@@ -6,8 +6,8 @@ Welcome to the **alitiq Load Forecasting API**! This guide explains how to creat
 
 ## Key concepts 📚
 
-In the **alitiq Load API**, a **load location** represents a place where you want forecasts (e.g., a single meter, a campus, or a substation).
-Each location has a human-friendly **external ID** (what *you* use) and an internal ID (what *we* store). The API maps internal IDs back to your external IDs for every response.
+In the **alitiq Load API**, a **load location** represents a place for which you want forecasts (e.g., a single meter, a campus, or a substation).
+Each location has a user-friendly **external ID** (what *you* use) and an internal ID (what *we* store). The API maps internal IDs back to your external IDs for every response.
 
 **Location fields**
 
@@ -18,10 +18,10 @@ Each location has a human-friendly **external ID** (what *you* use) and an inter
 | `location_id`               |   string |     ⭕    | Your **external** identifier. If omitted, the API assigns one automatically. |
 | `latitude`                  |    float |     ✅    | Decimal degrees.                                                             |
 | `longitude`                 |    float |     ✅    | Decimal degrees.                                                             |
-| `reference_weather_station` |      int |     ❌    | **Ignored on create**; server overwrites to `9999`.                          |
-| `created_at`                | datetime |     ❌    | Set by server at creation time (UTC).                                        |
 
 ---
+Note: ✅: Required, ⭕: Optional
+
 
 ## Services ⚡🔥💨
 
@@ -31,7 +31,7 @@ Each location must belong to one **service type**. This defines which forecastin
 | -------------------- | ------------------ | ------------------------------------------------------------ |
 | **Electricity Load** | `electricity-load` | Forecast electricity consumption (default if not specified). |
 | **District Heating** | `district-heating` | Forecast thermal load for heating networks.                  |
-| **Gas Load**         | `gas_load`         | Forecast natural gas demand.                                 |
+| **Gas Load**         | `gas-load`         | Forecast natural gas demand.                                 |
 | **Grid Loss**        | `grid-loss`        | Forecast electrical grid losses.                             |
 | **Regional Wind**    | `regional-wind`    | Forecast aggregated wind generation for a region.            |
 | **Regional Solar**   | `regional-solar`   | Forecast aggregated solar generation for a region.           |
@@ -71,7 +71,7 @@ Use `load/location/add/` to create a single load location.
 === "alitiq-py"
 
     ```python
-    from alitiq.models.load_forecast import LoadLocationForm
+    from alitiq import alitiqLoadAPI, LoadLocationForm
 
     # Example
     api = alitiqLoadAPI(api_key="your-key")
@@ -125,7 +125,7 @@ Choose your preferred response format via `?response_format=...`:
 * `html`
 * `csv`
 
-=== "python requests (JSON)"
+=== "python requests"
 
     ```python
     import requests
@@ -138,23 +138,11 @@ Choose your preferred response format via `?response_format=...`:
     print(resp.json())
     ```
 
-=== "python requests (HTML)"
-
-    ```python
-    import requests
-
-    url = "https://api.alitiq.com/load/location/list/"
-    params = {"response_format": "html"}
-    headers = {"x-api-key": "{api-key}"}
-
-    resp = requests.get(url, params=params, headers=headers)
-    print(resp.text)  # ready-to-render HTML table
-    ```
 
 === "alitiq-py"
 
     ```python
-    from alitiq.models.load_forecast import LoadLocationForm
+    from alitiq import alitiqLoadAPI
 
     # Example
     load_api = alitiqLoadAPI(api_key="your-key")

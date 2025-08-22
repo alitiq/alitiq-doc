@@ -70,8 +70,7 @@ This confirms your load location is set up and mapped to your identifier.
 If you're using the SDK, here's how to do it:
 
 ```python
-from alitiq import alitiqLoadAPI
-from alitiq.models.load_forecast import LoadLocationForm
+from alitiq import alitiqLoadAPI, LoadLocationForm
 
 # Initialize client
 load_api = alitiqLoadAPI(api_key="your-api-key")
