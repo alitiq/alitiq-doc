@@ -157,6 +157,8 @@ For horizontal single-axis tracking systems (type `3`), the following parameters
 
 * **`table_length`**: Length of the PV table (in meters)
 
+* **`height`**: Height of the rotation axis of the pv table (in metres)
+
 * **`row_distance`**: Distance between adjacent tracker rows (in meters)
   These two parameters are used to calculate the *Ground Coverage Ratio (GCR)*.
 
