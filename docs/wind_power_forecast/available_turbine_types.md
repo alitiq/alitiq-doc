@@ -197,4 +197,3 @@
 | FL54/1000   | 54               | 1000           | Fuhrländer       |
 | W2E-93/2000 | 93               | 2000           | Wind to Energy   |
 | SZ82/1500   | 82               | 1500           | Suzlon           |
-

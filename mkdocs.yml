@@ -154,6 +154,7 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Solar PV :
+      - Start: solar_power_forecast/index.md
       - Manage your PV portfolio: solar_power_forecast/setup_pv_portfolio_forecast.md
       - Push measurements for optimized Forecasts: solar_power_forecast/push_pv_measurement.md
       - Manage Unavailibilities and Curtailments: solar_power_forecast/push_pv_curtailments.md
@@ -181,3 +182,5 @@ nav:
       - Irradiance: weather_forecast/irradiance_data.md
   - Knowledge:
     - knowledge/index.md
+  - Utils:
+    - Timezones: utils/timezones.md

@@ -27,7 +27,7 @@ When pushing measurements, you need to include the following information:
 | `power`              | `float`         | Power output recorded (in specified unit).                        | None           |  
 | `irradiance`         | `float`         | (Optional) Irradiance value in W/m².                              | `-1.0`         |  
 | `power_measure`      | `str`           | Unit of power measurement (`kW`, `W`, etc.).                      | `kW`           |  
-| `timezone`           | `str`           | Timezone of the measurement data.                                 | `UTC`          |  
+| `timezone`           | `str`           | Timezone of the measurement timestamp. Available timezones can be found **[here](https://docs.alitiq.com/utils/timezones/)**                                | `UTC`          |  
 | `interval_in_minutes` | `int`           | Interval between measurements (in minutes).                       | `15`           |  
 | `window_boundary`    | `str`           | Defines the interval's alignment (`begin`, `center`, or `end`).    | `end`          |  
 
@@ -251,12 +251,27 @@ Here’s an example demonstrating how to submit measurement data using the `meas
 
 ---
 
-## Notes on Best Practices  
+## Notes
+
+### Best Practices  
 
 - **Batch Submissions**: Push multiple measurements in a single API call for efficiency.  
-- **Time Synchronization**: Ensure timestamps (`dt`) are accurate and in the correct timezone.  
+- **Time Synchronization**: Ensure timestamps (`dt`) are accurate and in the correct timezone. By defining `timezone`, `interval_in_minutes` and `window_boundary` we ask you to deal with it. 
 - **Historical Data**: Provide at least 90 days of measurements to unlock optimized forecasting.  
 - **Validation**: Use the SDK's `PvMeasurementForm` for automatic data validation.  
+
+### Interval in minutes
+
+The interval is important for measure transform into power (kW is default in alitiq's internal databases). Please take care that your data is aligned with the interval that you configure. 
+
+### Window - boundary
+
+It is important that you know where your timestamp is bounded. It can make a huge difference and will lead to timeshifts in the forecast. 
+You maybe more familiar with pandas timestamp labels, so here we have mapping and a further explaination. In the future we will maybe allow for both. The examples refer to a quarter-hourly time interval:
+
+- `begin` : `left` -> Timestamp 16:00 represents data from 16:00 to 16:15
+- `center` : `center` -> Timestamp 16:07:30 represents data from 16:00 to 16:15
+- `end` : `right` -> Timestamp 16:15 represents data from 16:00 to 16:15 (default in alitiq's databases)
 
 ---
 

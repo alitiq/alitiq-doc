@@ -79,8 +79,8 @@ The following parameters offer you flexibility when generating forecasts:
 | `location_id`           | Unique identifier for the Solar PV system. Required for system-level forecasts. This is your defined identifer. | *None*            |
 | `dt_calc`               | Timestamp for forecast calculation. Useful for time-specific forecasts, and access historic ones.               | *Latest available*|
 | `power_measure`         | Unit of power measurement (`kW`, `MW`, etc.).                                                                   | `"kW"`            |
-| `timezone`              | Timezone for the forecast data.                                                                                 | `"UTC"`           |
-| `interval_in_minutes`   | Forecast interval (e.g., `15` for 15-minute intervals). Important for retieviing Energy instead of Power        | `15`              |
+| `timezone`              | Timezone for the forecast timestamnps. Available timezones can be found **[here](https://docs.alitiq.com/utils/timezones/)**                                                                                 | `"UTC"`           |
+| `interval_in_minutes`   | Forecast interval (e.g., `15` for 15-minute intervals). Important for retieving Energy instead of Power        | `15`              |
 | `window_boundary`       | Defines interval boundaries (`begin`, `center`, or `end`).                                                      | `"end"`           |
 
 ---

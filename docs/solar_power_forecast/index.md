@@ -1,5 +1,8 @@
 # Welcome to alitiq's AI pwd Solar Power Forecasting service
 
+1. Setup your portfolio
+2. Send historical measurement data
+3. Receive optimized forecasts
 
 ## Navigation
 

@@ -25,7 +25,7 @@ When submitting curtailment data, include the following fields:
 | `location_id`        | `str`            | Unique ID of the wind park where the curtailment occurred.       | None           |
 | `dt`                 | `datetime` or `pandas.Timestamp` | Timestamp representing the curtailment's time window.         | None           |
 | `level`              | `float`          | Magnitude of curtailment (values between 0 and 1 ).          | None           |
-| `timezone`           | `str`            | Timezone of the timestamp.                                        | `UTC`          |
+| `timezone`           | `str`            | Timezone of the timestamp. Available timezones can be found **[here](https://docs.alitiq.com/utils/timezones/)**                                      | `UTC`          |
 | `interval_in_minutes` | `int`           | Interval length that the timestamp refers to.                     | `15`           |
 | `window_boundary`    | `str`            | Defines alignment of `dt` (`begin`, `center`, or `end`).          | `end`          |
 
