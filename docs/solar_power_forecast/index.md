@@ -8,10 +8,10 @@
 
 <div class="grid cards" markdown>
 
-- :hugeicons:solar-panel-05: __[Setup PV]__ – Blog post about how to setup a PV System
-- :grommet-icons:configure: __[Manage Portfolio]__ – Manage your PV system portfolio via API
-- :wi:forecast-io-partly-cloudy-day: __[Forecast]__ – Gain access to the most accurate forecast on the market
-- :carbon:weather-station: __[Measurement]__ – Provide measurement data from your PV-system to boost forecast performance
+- :fontawesome-solid-solar-panel: __[Setup PV]__ – Blog post about how to setup a PV System
+- :construction_site: __[Manage Portfolio]__ – Manage your PV system portfolio via API
+- :material-weather-partly-cloudy: __[Forecast]__ – Gain access to the most accurate forecast on the market
+- :material-gauge-low: __[Measurement]__ – Provide measurement data from your PV-system to boost forecast performance
 
 </div>
 
