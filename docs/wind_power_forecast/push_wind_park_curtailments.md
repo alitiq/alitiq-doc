@@ -25,9 +25,26 @@ When submitting curtailment data, include the following fields:
 | `location_id`        | `str`            | Unique ID of the wind park where the curtailment occurred.       | None           |
 | `dt`                 | `datetime` or `pandas.Timestamp` | Timestamp representing the curtailment's time window.         | None           |
 | `level`              | `float`          | Magnitude of curtailment (values between 0 and 1 ).          | None           |
-| `timezone`           | `str`            | Timezone of the timestamp. Available timezones can be found **[here](https://docs.alitiq.com/utils/timezones/)**                                      | `UTC`          |
+| `timezone`           | `str`            | (Optional) Timezone of the timestamp. Available timezones can be found **[here](https://docs.alitiq.com/utils/timezones/)                                       | `None`          |
 | `interval_in_minutes` | `int`           | Interval length that the timestamp refers to.                     | `15`           |
 | `window_boundary`    | `str`            | Defines alignment of `dt` (`begin`, `center`, or `end`).          | `end`          |
+
+
+## Note on metadata:
+
+The metadata you provide (window_boundary, power_measure) will be read only once at the moment. So changing this per entry in the payload of the request is currently not supported and will yield to wrong data in our database. 
+
+## Allowed timestamps format
+
+To force you to set the right timestamps we allow timezone aware OR naive timestamp with the additonal information of a timezone given for each sample in the provided data, 
+
+The following timestamps are allowed: 
+
+- `2025-09-08T00:00:00+00:00` : Timezone aware timestamp
+- `2025-09-08T00:00:00Z` : Timezone aware timestamp, reading as UTC
+- `2025-09-08T00:00:00` : Timezone naive timestamp, requires timezone parameter
+- `2025-09-08T00:00:00.000` : Timezone naive timestamp, requires timezone parameter
+
 
 ---
 

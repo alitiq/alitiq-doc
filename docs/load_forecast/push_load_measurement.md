@@ -25,15 +25,15 @@ When pushing measurements, you need to include the following information:
 | `dt`                 | `datetime`      | Timestamp of the measurement (ISO 8601 format).                   | None           |  
 | `power`              | `float`         | Power output recorded (in specified unit).                        | None           |  
 | `power_measure`      | `str`           | Unit of power measurement (`kW`, `W`, etc.).                      | `kW`           |  
-| `timezone`           | `str`           | Timezone of the measurement timestamp. Available timezones can be found **[here](https://docs.alitiq.com/utils/timezones/)**                                | `UTC`          |  
-| `interval_in_minutes` | `int`           | Interval between measurement timestamps (in minutes). Important to derive your data into MW which is the default in our database                    | `15`           |  
-| `window_boundary`    | `str`           | Defines the interval's alignment (`begin`, `center`, or `end`).   | `end`          |  
+| `timezone`           | `str`           | (Optional) Timezone of the measurement data. Available timezones can be found **[here](https://docs.alitiq.com/utils/timezones/)                                | `None`          |  
+| `interval_in_minutes` | `int`           | Interval between measurements (in minutes).                       | `15`           |  
+| `window_boundary`    | `str`           | Defines the interval's alignment (`begin`, `center`, or `end`).    | `end`          |  
 
 ### Detailed explanation: 
-* `timezone`: Specify the timezone of your data. Common options include:
+* `timezone`: Specify the timezone of your data OR define timezone aware timestamps. Common options include:
   * Europe/Berlin (includes daylight saving time)
   * Etc/GMT-1 (standard time, no daylight saving)
-  * UTC (default)
+  * UTC
 * `window_boundary`: Define where the timestamp is located within the time window. Options are:
   * begin
   * center
@@ -52,6 +52,23 @@ When pushing measurements, you need to include the following information:
 ## Note on Historical Measurements  
 
 To provide highly optimized forecasts, the API requires at least 90 days of historical measurement data for a given load timeseries. This data enables the system to fine-tune forecasts to match the unique characteristics of your setup.  This data needs to updated once per day for the last 24 hours. In case of diurnal updates, alitiq will adapt the forecast tot the latest observations every 15 minutes. 
+
+
+## Note on metadata:
+
+The metadata you provide (window_boundary, power_measure) will be read only once at the moment. So changing this per entry in the payload of the request is currently not supported and will yield to wrong data in our database. 
+
+## Allowed timestamps format
+
+To force you to set the right timestamps we allow timezone aware OR naive timestamp with the additonal information of a timezone given for each sample in the provided data, 
+
+The following timestamps are allowed: 
+
+- `2025-09-08T00:00:00+00:00` : Timezone aware timestamp
+- `2025-09-08T00:00:00Z` : Timezone aware timestamp, reading as UTC
+- `2025-09-08T00:00:00` : Timezone naive timestamp, requires timezone parameter
+- `2025-09-08T00:00:00.000` : Timezone naive timestamp, requires timezone parameter
+
 
 ---
 

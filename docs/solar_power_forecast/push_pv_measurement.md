@@ -27,7 +27,7 @@ When pushing measurements, you need to include the following information:
 | `power`              | `float`         | Power output recorded (in specified unit).                        | None           |  
 | `irradiance`         | `float`         | (Optional) Irradiance value in W/m².                              | `-1.0`         |  
 | `power_measure`      | `str`           | Unit of power measurement (`kW`, `W`, etc.).                      | `kW`           |  
-| `timezone`           | `str`           | Timezone of the measurement timestamp. Available timezones can be found **[here](https://docs.alitiq.com/utils/timezones/)**                                | `UTC`          |  
+| `timezone`           | `str`           | (Optional) Timezone of the measurement data. Available timezones can be found **[here](https://docs.alitiq.com/utils/timezones/)                                 | `None`          |  
 | `interval_in_minutes` | `int`           | Interval between measurements (in minutes).                       | `15`           |  
 | `window_boundary`    | `str`           | Defines the interval's alignment (`begin`, `center`, or `end`).    | `end`          |  
 
@@ -36,6 +36,22 @@ When pushing measurements, you need to include the following information:
 ## Note on Historical Measurements  
 
 To provide highly optimized forecasts, the API requires at least 90 days of historical measurement data for a given Solar PV system. This data enables the system to fine-tune forecasts to match the unique characteristics of your setup.  This data needs to updated once per day for the last 24 hours. In case of diurnal updates, alitiq will adapt the forecast tot the latest observations every 15 minutes. 
+
+## Note on metadata:
+
+The metadata you provide (window_boundary, power_measure) will be read only once at the moment. So changing this per entry in the payload of the request is currently not supported and will yield to wrong data in our database. 
+
+## Allowed timestamps format
+
+To force you to set the right timestamps we allow timezone aware OR naive timestamp with the additonal information of a timezone given for each sample in the provided data, 
+
+The following timestamps are allowed: 
+
+- `2025-09-08T00:00:00+00:00` : Timezone aware timestamp
+- `2025-09-08T00:00:00Z` : Timezone aware timestamp, reading as UTC
+- `2025-09-08T00:00:00` : Timezone naive timestamp, requires timezone parameter
+- `2025-09-08T00:00:00.000` : Timezone naive timestamp, requires timezone parameter
+
 
 ---
 

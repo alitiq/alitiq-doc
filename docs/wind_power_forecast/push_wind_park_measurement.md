@@ -26,9 +26,25 @@ When pushing measurements, you need to include the following information:
 | `dt`                 | `datetime`      | Timestamp of the measurement (ISO 8601 format).                   | None           |  
 | `power`              | `float`         | Power output recorded (in specified unit).                        | None           |  
 | `power_measure`      | `str`           | Unit of power measurement (`kW`, `W`, etc.).                      | `kW`           |  
-| `timezone`           | `str`           | Timezone of the measurement timestamp. Available timezones can be found **[here](https://docs.alitiq.com/utils/timezones/)**                                | `UTC`          |  
+| `timezone`           | `str`           | (Optional) Timezone of the measurement data.  Available timezones can be found **[here](https://docs.alitiq.com/utils/timezones/)                               | `None`          |  
 | `interval_in_minutes` | `int`           | Interval between measurements (in minutes).                       | `15`           |  
 | `window_boundary`    | `str`           | Defines the interval's alignment (`begin`, `center`, or `end`).    | `end`          |  
+
+## Note on metadata:
+
+The metadata you provide (window_boundary, power_measure) will be read only once at the moment. So changing this per entry in the payload of the request is currently not supported and will yield to wrong data in our database. 
+
+## Allowed timestamps format
+
+To force you to set the right timestamps we allow timezone aware OR naive timestamp with the additonal information of a timezone given for each sample in the provided data, 
+
+The following timestamps are allowed: 
+
+- `2025-09-08T00:00:00+00:00` : Timezone aware timestamp
+- `2025-09-08T00:00:00Z` : Timezone aware timestamp, reading as UTC
+- `2025-09-08T00:00:00` : Timezone naive timestamp, requires timezone parameter
+- `2025-09-08T00:00:00.000` : Timezone naive timestamp, requires timezone parameter
+
 
 ---
 
