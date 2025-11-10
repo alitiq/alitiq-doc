@@ -8,11 +8,13 @@ categories:
 # Release Note — Measurements & Curtailments Endpoints
 
 **Affected Routes:**  
+
 - `POST /solar/measurement/add/`
 - `POST /wind/measurement/add/`
 - `POST /load/measurement/add/`
 - `POST /solar/curtailments/add/`
 - `POST /wind/curtailments/add/`
+
 
 <!-- more -->
 
@@ -26,6 +28,7 @@ Previously, timestamps were required to be **naive (UTC-based)**, and a separate
 ---
 
 ## 🔄 What’s New
+
 - **Timezone-aware timestamps are now accepted** directly in the request payload.  
 - The `timezone` parameter **remains available but is no longer optional** — a missing or invalid timezone may now cause an error.  
 - The **default UTC fallback has been removed.**  
