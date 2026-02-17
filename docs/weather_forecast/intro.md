@@ -19,7 +19,7 @@ Authentication is performed using the `x-api-key` parameter in the request heade
 
 ### Example Header:
 ```bash
-curl -X GET 'https://api.alitiq.com/weather/weather_forecast/?latitude=49.356&longitude=11.904&response_format=json&weather_model=icon_eu' \
+curl -X GET 'https://api.alitiq.com/weather/forecast/?latitude=49.356&longitude=11.904&response_format=json&weather_model=icon_eu' \
 -H 'x-api-key: <your-api-key>'
 ```
 
