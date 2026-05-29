@@ -38,15 +38,16 @@ The endpoint for this service is `api.alitiq.com/weather`
 
 ## How to Get Access 🔑  
 
-Currently alitiq offers a web interface to the solar power forecast service. After you have logged in, you can view the ``x-api-key`` 
+The standalone solar portal has been discontinued. Portfolio management is now available directly in the API GUI at **[https://api.alitiq.com/gui](https://api.alitiq.com/gui)**.
 
-### **Solar PV Forecasting API** 🌞
-- **Step 1**: Register your account at **[Solar-APP](https://solar-app.alitiq.com)**.  
-- **Step 2**: Once registered, you’ll receive your API key and relevant details.  
-- **Step 3**: Use the SDK or directly interact with the API to manage your solar portfolio.  
+### **Solar PV | Wind Forecasting API + GUI** 🌞
+- **Step 1**: Contact **[sales@alitiq.com](mailto:sales@alitiq.com)** for API access and pricing information.  
+- **Step 2**: Once approved, you’ll receive your `x-api-key` and relevant details.  
+- **Step 3**: Open **[https://api.alitiq.com/gui](https://api.alitiq.com/gui)** and authenticate with your API key.  
+- **Step 4**: Manage both your PV and wind portfolios directly in the GUI or use the endpoints via SDK/API.  
 
 
-### **Load | Wind | Weather Forecasting API** 🔋
+### **Load | Weather Forecasting API** 🔋
 - **Step 1**: Contact **[sales@alitiq.com](mailto:sales@alitiq.com)** for API access and pricing information.  
 - **Step 2**: Once approved, you’ll receive your API key and documentation tailored to your energy needs.  
 - **Step 3**: Use the SDK or API to push measurements, retrieve forecasts, and manage demand analytics.  

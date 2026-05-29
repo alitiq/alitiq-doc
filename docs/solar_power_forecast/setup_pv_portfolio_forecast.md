@@ -8,6 +8,19 @@ Welcome to the **alitiq Solar Power Forecasting API**! This guide explains how t
 
 In the alitiq Solar API, a **PV power plant** is represented as a location with one or more **subsystems**. Each subsystem corresponds to a unique configuration of azimuth and tilt of the PV modules. By defining these subsystems, the API ensures precise forecasting for the entire power plant.  
 
+## Manage Your Portfolio via API GUI (Recommended) 🧭
+
+The standalone solar app has been stopped.
+Please use **[https://api.alitiq.com/gui](https://api.alitiq.com/gui)** to manage your portfolio.
+
+- Authenticate with your personal `x-api-key`.
+- Use the GUI to inspect your portfolio and add new PV systems.
+- The API endpoints below are still fully supported for automation.
+
+![API GUI dashboard overview](../assets/overview_dashboard_api.png)
+
+![Add new PV system panel](../assets/example_add_new_pv_systems.png)
+
 
 ### Subsystems  
 - A **subsystem** is defined by:  

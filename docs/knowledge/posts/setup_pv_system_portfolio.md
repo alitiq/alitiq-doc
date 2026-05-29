@@ -2,12 +2,13 @@
 date: 2025-02-02
 authors: [alitiq]
 categories:
-  - Solar-APP
+  - API GUI
+  - Solar PV
 ---
 
 # ⚡ Setup your PV-System for Solar Power Forecast @ alitiq
 
-In our general Documentation about the API [here](https://docs.alitiq.com/solar_power_forecast/setup_pv_portfolio_forecast), we described the way to setup / configure your PV-System in a high-level way. To give you a more detailed view into the way we think about PV-Systems and how you can boost the performance by just following this guide, keep reading. 
+In our general Documentation about the API [here](https://docs.alitiq.com/solar_power_forecast/setup_pv_portfolio_forecast), we described the way to setup / configure your PV-System in a high-level way. You can manage your systems directly in the API GUI under [https://api.alitiq.com/gui](https://api.alitiq.com/gui) using your `x-api-key`. To give you a more detailed view into the way we think about PV-Systems and how you can boost the performance by just following this guide, keep reading. 
 
 <!-- more -->
 
@@ -63,6 +64,6 @@ The other parameters (table length, height and row distance are important for th
 
 ## Boosting your PV forecast performance?
 
-In case you are unable to share near realtime data from your pv system with us, your forecast will derived by default according to the configuration you have made in our portal. As much more accurate the setup is, the more accurate the forecast will be. And even when you provide measurements from your pv systems, the initial guess or baseline forecast will help our machine learning and artifical intelligence algorithms to derive more accurate forecasts for your. 
+In case you are unable to share near realtime data from your pv system with us, your forecast will derived by default according to the configuration you have made in our API GUI. As much more accurate the setup is, the more accurate the forecast will be. And even when you provide measurements from your pv systems, the initial guess or baseline forecast will help our machine learning and artifical intelligence algorithms to derive more accurate forecasts for your. 
 
 

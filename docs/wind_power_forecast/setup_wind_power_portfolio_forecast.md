@@ -8,6 +8,16 @@ Welcome to the **alitiq Wind Power Forecasting API**! This guide explains how to
 
 In the **alitiq Wind API**, a **WindPark** is represented as a location with one or more **wind turbines**. Forecasts are generated for an entire **WindPark**, not for individual turbines.  
 
+## Manage Wind Portfolios via API GUI (New) 🧭
+
+You can now manage wind portfolios directly in the API GUI at **[https://api.alitiq.com/gui](https://api.alitiq.com/gui)**.
+
+- Authenticate with your `x-api-key`.
+- Add and inspect wind parks from the GUI.
+- Keep using the endpoints below for scripted integrations.
+
+![API GUI dashboard overview](../assets/overview_dashboard_api.png)
+
 A list of available wind turbines can be found **[here](https://docs.alitiq.com/wind_power_forecast/available_turbine_types/)**.  
 
 ---
