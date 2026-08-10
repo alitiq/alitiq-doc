@@ -15,6 +15,8 @@ Please use **[https://api.alitiq.com/gui](https://api.alitiq.com/gui)** to manag
 
 - Authenticate with your personal `x-api-key`.
 - Use the GUI to inspect your portfolio and add new PV systems.
+- When adding a system you can tick **Self-consumption location** to flag sites that consume part of their own generation.
+- The portfolio overview summarises the total installed capacity of your portfolio in **MWp**.
 - The API endpoints below are still fully supported for automation.
 
 ![API GUI dashboard overview](../assets/overview_dashboard_api.png)
@@ -33,6 +35,12 @@ Please use **[https://api.alitiq.com/gui](https://api.alitiq.com/gui)** to manag
 
 - Each unique combination of azimuth and tilt requires a separate subsystem for accurate forecasting.  
 
+
+### Location options
+
+Some settings apply to the **whole location** rather than to an individual subsystem:
+
+- **`self_consumption`** *(boolean, default `false`)* — mark a site that consumes part of its own generation behind the meter. This flag is stored on the location and returned when you list your portfolio, so downstream tooling can distinguish grid-feeding plants from self-consumption sites. When you configure several subsystems for one `location_id`, set the same value on each entry — the location adopts the flag once.
 
 ---
 
@@ -58,7 +66,8 @@ To add a new location to your portfolio, you have to use the `pv_systems/add/` e
             "azimuth": 180,
             "tilt": 13,
             "temp_factor": 0.033,
-            "mover": 1
+            "mover": 1,
+            "self_consumption": True
         },
         {
             "location_id": "12",
@@ -70,7 +79,8 @@ To add a new location to your portfolio, you have to use the `pv_systems/add/` e
             "azimuth": 180,
             "tilt": 15,
             "temp_factor": 0.033,
-            "mover": 1
+            "mover": 1,
+            "self_consumption": True
         }
     ]
     headers = {"Content-Type": "application/json", "x-api-key": {api-key}}
@@ -98,6 +108,7 @@ To add a new location to your portfolio, you have to use the `pv_systems/add/` e
         installed_power_inverter=950.0,
         azimuth=180.0,
         tilt=25.0,
+        self_consumption=True,
     )
     
     # Create the location
@@ -123,7 +134,8 @@ To add a new location to your portfolio, you have to use the `pv_systems/add/` e
             "azimuth": 180,
             "tilt": 13,
             "temp_factor": 0.033,
-            "mover": 0
+            "mover": 0,
+            "self_consumption": true
         },
         {
             "location_id": "12",
@@ -135,7 +147,8 @@ To add a new location to your portfolio, you have to use the `pv_systems/add/` e
             "azimuth": 180,
             "tilt": 15,
             "temp_factor": 0.033,
-            "mover": 0
+            "mover": 0,
+            "self_consumption": true
         }
     ]'
     ``` 
@@ -243,6 +256,7 @@ Example response json:
     "country",
     "do_backtracking",
     "row_distance",
+    "self_consumption",
     "tso_area",
     "subsystem_id",
     "installed_power",
@@ -272,6 +286,7 @@ Example response json:
       "DE",
       false,
       null,
+      true,
       "Amprion",
       5599,
       709.3,
@@ -294,6 +309,7 @@ Example response json:
       "DE",
       false,
       null,
+      true,
       "Amprion",
       5759,
       999.38,
@@ -316,6 +332,7 @@ Example response json:
       null,
       null,
       null,
+      false,
       null,
       5796,
       320.0,
@@ -337,6 +354,51 @@ In the response of your portfolio you might find additional information that you
 In case you use the html- Response of the API the systems will be shown in a table like this: 
 
 ![html-overview API](https://docs.alitiq.com/assets/html_overview_api.png)
+
+---
+
+## Update a system in your portfolio
+
+You can now update an existing system in place using a `PUT` request to `pv_systems/update/` — no need to delete and re-create it. Identify the target with your `location_id` and the `subsystem_id` you want to change, then send only the fields you want to overwrite. Both location-level fields (e.g. `site_name`, `latitude`, `longitude`, `tso_area`, `self_consumption`) and subsystem-level fields (e.g. `installed_power`, `azimuth`, `tilt`) are supported.
+
+=== "python requests"
+
+    ``` python
+    import requests
+
+    url = "https://api.alitiq.com/solar/pv_systems/update/"
+
+    payload = {
+        "location_id": "12",
+        "subsystem_id": 5599,
+        "self_consumption": True,
+        "installed_power": 350
+    }
+    headers = {"Content-Type": "application/json", "x-api-key": {api-key}}
+
+    response = requests.request("PUT", url, json=payload, headers=headers)
+
+    print(response.text)
+    ```
+
+=== "cURL"
+
+    ``` bash
+    curl --request PUT \
+      --url https://api.alitiq.com/solar/pv_systems/update/ \
+      --header 'Content-Type: application/json' \
+      --header 'x-api-key: {api-key}' \
+      --data '{
+        "location_id": "12",
+        "subsystem_id": 5599,
+        "self_consumption": true,
+        "installed_power": 350
+    }'
+    ```
+
+!!! note
+
+    `location_id` and `subsystem_id` are required so the API knows which system to update. All other fields are optional — omitted fields keep their current values. You can retrieve the `subsystem_id` from the `pv_systems/list/` response shown above.
 
 ---
 
@@ -404,7 +466,11 @@ You can omit the `subsystems` field and define the **azimuth**, **tilt**, and **
 
 ### Can I update the location later?
 
-Currently not, this feature is under development. Please `delete` the system and re-configure it.
+Yes. Use the `PUT /solar/pv_systems/update/` endpoint (see [Update a system in your portfolio](#update-a-system-in-your-portfolio)) to change location- or subsystem-level fields in place. Provide the `location_id` and `subsystem_id`, plus only the fields you want to overwrite.
+
+### What is `self_consumption`?
+
+`self_consumption` is a location-level boolean flag (default `false`) that marks a site consuming part of its own generation behind the meter. Set it when creating a system, toggle it later via the update endpoint, or manage it directly in the [API GUI](https://api.alitiq.com/gui).
 
 ---
 
