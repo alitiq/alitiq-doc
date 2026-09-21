@@ -69,6 +69,16 @@ To maintain the security and confidentiality of your portfolio:
 
 Your `x-api-key` is the gateway to your portfolio—keep it protected to ensure your data stays safe.  
 
+### Manage Your Token & Enable 2FA in the GUI 🔑
+
+The API GUI at **[https://api.alitiq.com/gui/user_management/](https://api.alitiq.com/gui/user_management/)** now includes a **User Management** section where you can:
+
+- **Regenerate your `x-api-key`** at any time and choose an expiration of 30, 90, 180, or 365 days, or set it to never expire.
+- **Enable optional two-factor authentication (2FA)** for your GUI login via a QR code and any TOTP authenticator app (Google Authenticator, Authy, etc.). 2FA only protects the GUI login — it does not change how the `x-api-key` header works for API requests, so existing integrations are unaffected.
+- **Receive an email reminder 10 days before your token expires** (only if you set an expiration — tokens set to "Never" don't trigger reminders), with a direct link back to the Token Management Center so you can regenerate it before it lapses.
+
+See the [Token Management Center & 2FA](knowledge/posts/token_management_and_2fa_in_api_gui.md) post for a walkthrough with screenshots.
+
 ---
 
 
