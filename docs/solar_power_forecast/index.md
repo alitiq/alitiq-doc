@@ -12,6 +12,7 @@
 - :construction_site: __[Manage Portfolio]__ – Manage your PV system portfolio via API or GUI
 - :material-weather-partly-cloudy: __[Forecast]__ – Gain access to the most accurate forecast on the market
 - :material-gauge-low: __[Measurement]__ – Provide measurement data from your PV-system to boost forecast performance
+- :material-solar-power-variant: __[Simulation]__ – Simulate the power output of any PV system from satellite irradiance
 
 </div>
 
@@ -19,3 +20,4 @@
   [Manage Portfolio]: https://docs.alitiq.com/solar_power_forecast/setup_pv_portfolio_forecast/
   [Forecast]: https://docs.alitiq.com/solar_power_forecast/pv_solar_power_forecast/
   [Measurement]: https://docs.alitiq.com/solar_power_forecast/push_pv_measurement/
+  [Simulation]: https://docs.alitiq.com/solar_power_forecast/pv_simulation/

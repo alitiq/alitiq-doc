@@ -12,7 +12,7 @@ The simulation runs on the fly. Nothing is stored, and the PV system doesn't nee
 
 ## ⚙️ **How it works**
 
-1. **Irradiance**: global horizontal irradiance is taken from the same satellite data as the [Irradiance API](irradiance_data.md).
+1. **Irradiance**: global horizontal irradiance is taken from the same satellite data as the [Irradiance API](../weather_forecast/irradiance_data.md).
 2. **Air temperature**: hourly observations of the closest weather station within 40 km, interpolated to the irradiance timestamps. If no station is available, a constant 15 °C is used.
 3. **Simulation**: alitiq's PV model converts both into AC power, including module orientation, tracking, temperature losses and inverter clipping.
 
