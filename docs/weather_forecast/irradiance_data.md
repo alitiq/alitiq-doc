@@ -30,6 +30,7 @@ It allows you to query irradiance time series for a given point location, either
 | `city_name`       | string | Optional city name (used if coordinates not provided)     |
 | `start_date`      | string | Start datetime (ISO format, e.g., `2024-05-01T00:00`)     |
 | `end_date`        | string | End datetime (ISO format, e.g., `2024-05-01T03:00`)       |
+| `satellite`       | string | `cm_saf_europe` (default, 10-minute values from 2026-07-10) or `cm_saf` (15-minute values) |
 | `response_format` | string | `json`, `csv`, or `html` (default: `json`)                |
 
 ---
@@ -48,6 +49,7 @@ It allows you to query irradiance time series for a given point location, either
 ✅ Data is based on satellite-derived estimates, not ground station measurements
 ✅ Only available for locations within the MSG satellite full-disk view (Europe, Africa)
 ✅ If using `zip_code` or `city_name`, the service will geocode the location to coordinates
+✅ To simulate the power output of a PV system from these observations, see [PV simulation from irradiance](pv_simulation.md)
 
 ---
 
