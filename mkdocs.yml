@@ -180,6 +180,7 @@ nav:
       - Access Weather observations: weather_forecast/access_weather_observations.md
       - Precipitation: weather_forecast/precipitation_data.md
       - Irradiance: weather_forecast/irradiance_data.md
+      - PV simulation from irradiance: weather_forecast/pv_simulation.md
   - Knowledge:
     - knowledge/index.md
   - Utils:
