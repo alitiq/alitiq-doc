@@ -161,6 +161,7 @@ nav:
       - Inspect measurements in alitiqs database: solar_power_forecast/inspect_pv_measurement.md
       - Get access to Forecasts: solar_power_forecast/pv_solar_power_forecast.md
       - Check for available forecast runs: solar_power_forecast/check_available_runs.md
+      - PV simulation from irradiance: solar_power_forecast/pv_simulation.md
   - Wind Power :
       - Manage your Wind Power portfolio: wind_power_forecast/setup_wind_power_portfolio_forecast.md
       - Push measurements for optimized Forecasts: wind_power_forecast/push_wind_park_measurement.md
