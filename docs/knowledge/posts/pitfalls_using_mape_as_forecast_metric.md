@@ -3,9 +3,13 @@ date: 2024-10-16
 authors: [alitiq]
 categories:
   - Evaluation
+canonical: https://alitiq.com/en/blog/mape-pitfalls-forecast-accuracy
 ---
 
 # Pitfalls using MAPE as forecast accuracy metric 
+
+!!! info "Updated version"
+    An extended version of this article, with an energy example, a section on what a good MAPE is and further references, is on our blog: [Pitfalls of Using MAPE as a Forecast Accuracy Metric](https://alitiq.com/en/blog/mape-pitfalls-forecast-accuracy) ([Deutsch](https://alitiq.com/de/blog/mape-grenzen-prognoseguete)).
 
 ## Introduction
 
