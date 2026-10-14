@@ -81,6 +81,9 @@ plugins:
 #  - material/overrides/hooks/shortcodes.py
 #  - material/overrides/hooks/translations.py
 
+hooks:
+  - material/overrides/hooks/canonical.py
+
 # Additional configuration
 extra:
   status:
