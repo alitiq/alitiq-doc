@@ -34,6 +34,15 @@ Weather is our profession but not our business. Eitherways weather data is a bas
 
 The endpoint for this service is `api.alitiq.com/weather`
 
+### 4. **MCP Server for AI Assistants** 🤖
+Connect AI assistants such as Claude Code to your alitiq data via the Model Context Protocol (MCP) and ask questions in your own words:
+
+- **Your Portfolio**: List your PV systems, wind parks and load locations.
+- **Forecasts & Measurements**: Retrieve power and load forecasts and compare them with your measurements.
+- **Read-only & Secure**: Uses your existing `x-api-key`; assistants can read but never change your data.
+
+The endpoint for this service is `api.alitiq.com/mcp`. See [Connect AI assistants](ai_assistants/mcp_server.md) for the setup.
+
 ---
 
 ## How to Get Access 🔑  
